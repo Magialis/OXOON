@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bayon&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Tektur:wght@400..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Oxoon</title>
+</head>
+
+<body>
+    <aside class="sidebar">
+        <h1 class="sidebar__logo">
+            <img src="./assets/images/logo.png" alt="Oxoon">
+        </h1>
+        <nav class="sidebar__nav">
+            <div class="nav__section">
+                <h2 class="nav__label">Principal</h2>
+                <ul class="nav__items">
+                    <li class="nav__item active">
+                        <a href="#visao-geral">Visão Geral</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#sistema-de-energia">Sistema de Energia</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#sistema-de-oxigenio">Sistema de Oxigênio</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#setores-de-consumo">Setores de Consumo</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#tripulacao-ativa">Tripulação Ativa</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav__section">
+                <h2 class="nav__label">Sistema</h2>
+                <ul class="nav__items">
+                    <li class="nav__item nav__item--alert">
+                        <a href="#alertas">
+                            Alertas
+                        </a>
+                        <span class="badge">3</span>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#relatorios">Relatórios</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#configuracoes">Configurações</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="sidebar__footer">
+            <div class="mission-box">
+                <h3 class="mission-box__label">Status da Missão</h3>
+                <p class="mission-box__value">
+                    <span class="dot"></span>
+                    ARTEMIS-7 ATIVO
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    <header class="topbar">
+        <div class="topbar__titles">
+            <h2 class="topbar__title">Visão Geral da Base</h2>
+            <h3 class="topbar__subtitle">Base Lunar OXOON · Missão Artemis-7</h3>
+        </div>
+        <div class="topbar__clock">
+            <span class="clock__mjd">MJD 60850</span>
+            <div class="clock__divisor"></div>
+            <span class="clock__time" id="clock">--:--:--</span>
+            <span class="clock__timezone">UTC</span>
+        </div>
+        <button class="btn btn--ghost">Alertas</button>
+        <a href="#relatorios" class="btn btn--primary">+ Relatório</a>
+        <button class="avatar" aria-label="Menu do Usuário">CG</button>
+    </header>
+
+    <main>
+
+        <section id="visao-geral" class="page active">
+            <p>Conteúdo da Visão Geral</p>
+        </section>
+
+        <section id="sistema-de-energia" class="page">
+            <p>Conteúdo do Sistema de Energia</p>
+        </section>
+
+        <section id="sistema-de-oxigenio" class="page">
+            <p>Conteúdo do Sistema de Oxigênio</p>
+        </section>
+
+        <section id="setores-de-consumo" class="page">
+            <p>Conteúdo dos Setores de Consumo</p>
+        </section>
+
+        <section id="tripulacao-ativa" class="page">
+            <p>Conteúdo da Tripulação Ativa</p>
+        </section>
+
+        <section id="alertas" class="page">
+            <p>Conteúdo dos Alertas</p>
+        </section>
+
+        <section id="relatorios" class="page">
+            <p>Conteúdo dos Relatórios</p>
+        </section>
+
+    </main>
+
+    <script src="./assets/js/script.js"></script>
+
+</body>
+
+</html>
