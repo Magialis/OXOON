@@ -9,6 +9,7 @@
     --primary-color: #9D00FF;
     --secondary-color: #FF5722;
     --tertiary-color: #5CB85C;
+    --red-color: #ff3434;
     --title-color: #F1F7F7;
     --text-color: #A0A0A0;
     --bg-card: #3A3A3A;
@@ -372,3 +373,470 @@ main {
 /* CSS DOS RELATÓRIOS */
 
 /* ------------------- */
+
+
+
+/* TRIPULAÇÂO ATIVA */
+
+.dashboard {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+    padding: 24px;
+    overflow: auto;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 3fr 1.15fr;
+    gap: 12px;
+}
+
+.content-grid__col {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* BOTÕES GERAIS */
+.btn {
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.25s ease;
+    border-radius: 6px;
+    font-size: var(--fs-nav-label);
+}
+
+.btn--ghost {
+    background: rgba(255, 255, 255, 0.07);
+    color: var(--text-color);
+    border: 1px solid rgba(255, 255, 255, 0.11);
+    padding: 8px 12px;
+}
+
+.btn--ghost:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* HERO CARD */
+.hero-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 170px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #161616, #170525);
+    border: 1px solid #f1f7f7b4;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.hero-card__title {
+    font-family: var(--font-title);
+    color: var(--title-color);
+    font-size: var(--fs-subheading);
+    margin-bottom: 4px;
+    margin-top: -60px;
+}
+
+.hero-card__description {
+    color: var(--text-color);
+    font-size: var(--fs-body);
+    max-width: 450px;
+}
+
+.hero-card__status-list {
+    display: flex;
+    gap: 35px;
+}
+
+.hero-card__status-item {
+    text-align: center;
+    min-width: 70px;
+}
+
+.hero-card__status-value {
+    font-family: var(--font-number);
+    font-size: var(--fs-heading);
+    margin-bottom: 4px;
+    text-shadow: 0 0 10px currentColor;
+}
+
+.hero-card__status-item:nth-child(1) .hero-card__status-value { color: var(--tertiary-color); }
+.hero-card__status-item:nth-child(2) .hero-card__status-value { color: var(--secondary-color); }
+.hero-card__status-item:nth-child(3) .hero-card__status-value { color: var(--red-color); }
+
+.hero-card__status-label {
+    font-size: .7rem;
+    color: var(--text-color);
+}
+
+/* PAINÉIS */
+.panel {
+    background: var(--bg-color);
+    border: 1px solid #f1f7f7b4;
+    border-radius: 15px;
+    padding: 12px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+.panel__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.panel__header--crew {
+    align-items: flex-start;
+}
+
+.panel__titles {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.panel__title {
+    font-family: var(--font-title);
+    font-size: var(--fs-body);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    color: var(--title-color);
+    margin: 0 0 2px 0;
+}
+
+.panel__subtitle {
+    margin-top: 3px;
+    color: var(--text-color);
+    font-size: .7rem;
+    line-height: 1;
+    display: block;
+}
+
+
+/* COMPONENTES INTERNOS DOS PAINÉIS */
+
+/* Controles de Tempo */
+.time-switch {
+    display: flex;
+    gap: 6px;
+}
+
+.time-switch__btn {
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--text-color);
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.time-switch__btn--selected {
+    background: var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-color);
+    color: var(--title-color);
+}
+
+/* Gráfico e Legendas */
+.panel__chart-area {
+    width: 100%;
+    height: 250px;
+    border-radius: 8px;
+    padding: 10px;
+    background: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+.chart-legend {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 20px;
+    gap: 20px;
+}
+
+.chart-legend__item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-color);
+    font-size: .85rem;
+}
+
+.chart-legend__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.chart-legend__dot--green { background: var(--tertiary-color); }
+.chart-legend__dot--red { background: var(--red-color); }
+.chart-legend__dot--orange { background: var(--secondary-color); }
+
+.chart__svg {
+    width: 100%;
+    height: 220px;
+}
+
+.chart__line {
+    fill: none;
+    stroke-width: 2.5;
+}
+
+.chart__line--green {
+    stroke: var(--tertiary-color);
+    filter: drop-shadow(0 0 4px var(--tertiary-color));
+}
+
+.chart__line--red {
+    stroke: var(--red-color);
+    filter: drop-shadow(0 0 4px var(--red-color));
+}
+
+.chart__line--orange {
+    stroke: var(--secondary-color);
+    filter: drop-shadow(0 0 4px var(--secondary-color));
+}
+
+.chart__x-axis {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    color: var(--text-color);
+    font-size: .75rem;
+}
+
+/* Mapa de Localização */
+.panel--location {
+    height: 300px;
+    flex: 1;
+}
+
+.map {
+    position: relative;
+    overflow: hidden;
+    height: 320px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, var(--bg-card), var(--bg-color));
+}
+
+.map__label {
+    color: var(--text-color);
+    font-size: .8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 6px 10px;
+    background: rgba(0, 0, 0, .5);
+    backdrop-filter: blur(4px);
+    border-radius: 6px;
+    z-index: 2;
+}
+
+.map__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(.55) contrast(1.1);
+}
+
+/* Lista da Tripulação */
+.crew-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.crew-card {
+    min-height: 72px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.crew-card:hover {
+    transform: translateX(3px);
+}
+
+/* Modificadores de estado do card */
+.crew-card--warning { background: #5c2d1f; }
+.crew-card--success { background: #23442d; }
+.crew-card--danger { background: #4f1f1f; }
+
+.crew-card__info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.crew-card__avatar {
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), #6a00ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    width: 36px;
+    height: 36px;
+    font-size: .7rem;
+    box-shadow: 0 0 12px rgba(157, 0, 255, 0.25);
+}
+
+.crew-card__name {
+    font-size: .9rem;
+    margin: 0 0 4px 0;
+    color: var(--title-color);
+}
+
+.crew-card__role {
+    font-size: .75rem;
+    color: var(--text-color);
+    display: block;
+}
+
+.crew-card__time {
+    display: block;
+    margin-top: 4px;
+    font-size: .75rem;
+    color: var(--text-color);
+}
+
+/* Tags de Status */
+.status-tag {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: .7rem;
+    font-weight: 700;
+    text-shadow: 0 0 10px currentColor;
+}
+
+.status-tag::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.status-tag--online { color: var(--tertiary-color); }
+.status-tag--online::before { background: var(--tertiary-color); box-shadow: 0 0 8px var(--tertiary-color); }
+
+.status-tag--offline { color: var(--red-color); }
+.status-tag--offline::before { background: var(--red-color); box-shadow: 0 0 8px var(--red-color); }
+
+.status-tag--absent { color: var(--secondary-color); }
+.status-tag--absent::before { background: var(--secondary-color); box-shadow: 0 0 8px var(--secondary-color); }
+
+
+/* Biometria */
+.panel--biometrics {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 280px;
+}
+
+.metric-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 14px;
+}
+
+.metric {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.metric__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2px;
+}
+
+.metric__label {
+    color: var(--text-color);
+    font-size: .75rem;
+}
+
+.metric__value {
+    font-size: .8rem;
+    text-shadow: 0 0 10px currentColor;
+}
+
+.metric:nth-child(1) .metric__value,
+.metric:nth-child(4) .metric__value { color: var(--tertiary-color); }
+.metric:nth-child(2) .metric__value { color: var(--secondary-color); }
+.metric:nth-child(3) .metric__value { color: var(--primary-color); }
+
+.metric__bar {
+    width: 100%;
+    height: 5px;
+    background: #3d3d3d;
+    border-radius: 999px;
+    overflow: visible;
+}
+
+.metric__fill {
+    height: 100%;
+    border-radius: 999px;
+}
+
+.metric__fill--green { background: var(--tertiary-color); box-shadow: 0 0 10px var(--tertiary-color); }
+.metric__fill--orange { background: var(--secondary-color); box-shadow: 0 0 10px var(--secondary-color); }
+.metric__fill--purple { background: var(--primary-color); box-shadow: 0 0 10px var(--primary-color); }
+
+
+/* SCROLLBAR E POPUP */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #161616;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 10px;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, .5);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+}
+
+.popup-img {
+    width: 600px;
+    border-radius: 20px;
+    max-width: 90%;
+}
+
+/* FIM DA TRIPULAÇÂO ATIVA */

@@ -107,8 +107,213 @@
         </section>
 
         <section id="tripulacao-ativa" class="page">
-            <p>Conteúdo da Tripulação Ativa</p>
-        </section>
+        <section class="hero-card">
+    <div class="hero-card__content">
+        <h3 class="hero-card__title">Tripulação Ativa</h3>
+        <p class="hero-card__description">
+            Monitoramento de saúde, localização e atividade da tripulação.
+        </p>
+    </div>
+
+    <div class="hero-card__status-list">
+        <div class="hero-card__status-item">
+            <h2 class="hero-card__status-value">07</h2>
+            <span class="hero-card__status-label">ONLINE</span>
+        </div>
+        <div class="hero-card__status-item">
+            <h2 class="hero-card__status-value">02</h2>
+            <span class="hero-card__status-label">AUSENTE</span>
+        </div>
+        <div class="hero-card__status-item">
+            <h2 class="hero-card__status-value">03</h2>
+            <span class="hero-card__status-label">OFFLINE</span>
+        </div>
+    </div>
+</section>
+
+<section class="content-grid">
+    <div class="content-grid__col content-grid__col--left">
+        
+        <div class="panel">
+            <header class="panel__header">
+                <div class="panel__titles">
+                    <h3 class="panel__title">ATIVIDADE DA TRIPULAÇÃO</h3>
+                    <small class="panel__subtitle">Monitoramento semanal</small>
+                </div>
+
+                <div class="chart-legend">
+                    <div class="chart-legend__item">
+                        <span class="chart-legend__dot chart-legend__dot--green"></span>
+                        <span class="chart-legend__label">Setor A</span>
+                    </div>
+                    <div class="chart-legend__item">
+                        <span class="chart-legend__dot chart-legend__dot--red"></span>
+                        <span class="chart-legend__label">Setor B</span>
+                    </div>
+                    <div class="chart-legend__item">
+                        <span class="chart-legend__dot chart-legend__dot--orange"></span>
+                        <span class="chart-legend__label">Setor C</span>
+                    </div>
+                </div>
+
+                <div class="time-switch">
+                    <button class="time-switch__btn">12h</button>
+                    <button class="time-switch__btn">24h</button>
+                    <button class="time-switch__btn time-switch__btn--selected" aria-pressed="true">7d</button>
+                </div>
+            </header>
+
+            <div class="panel__chart-area">
+                <svg class="chart__svg" viewBox="0 0 800 250" aria-hidden="true">
+                    <polyline points="-180,180 140,150 240,130 340,110 440,90 540,70 650,55 760,40" class="chart__line chart__line--green" />
+                    <polyline points="-180,120 140,122 240,125 340,118 440,122 540,130" class="chart__line chart__line--red" />
+                    <polyline points="-180,150 150,210 260,250" class="chart__line chart__line--orange" />
+                </svg>
+
+                <div class="chart__x-axis">
+                    <span>SEG</span>
+                    <span>TER</span>
+                    <span>QUA</span>
+                    <span>QUI</span>
+                    <span>SEX</span>
+                    <span>SAB</span>
+                    <span>AGORA</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel--location">
+            <header class="panel__header">
+                <div class="panel__titles">
+                    <h3 class="panel__title">LOCALIZAÇÃO DA TRIPULAÇÃO</h3>
+                    <small class="panel__subtitle">Posicionamento em tempo real da base lunar</small>
+                </div>
+            </header>
+
+            <div class="map">
+                <img class="map__image" src="./assets/images/mapa.png" alt="Mapa topográfico mostrando a localização dos membros na base lunar">
+                <div class="map__label">
+                    POSICIONAMENTO EM TEMPO REAL
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-grid__col content-grid__col--right">
+        
+        <div class="panel">
+            <header class="panel__header panel__header--crew">
+                <div class="panel__titles">
+                    <h3 class="panel__title">SETOR A</h3>
+                    <small class="panel__subtitle">Setor A da tripulação lunar</small>
+                </div>
+                <button class="btn btn--ghost">Alterar</button>
+            </header>
+
+            <div class="crew-list">
+                <article class="crew-card crew-card--warning" onclick="popup.style.display='flex'" role="button" tabindex="0">
+                    <div class="crew-card__info">
+                        <div class="crew-card__avatar">TC</div>
+                        <div class="crew-card__details">
+                            <h4 class="crew-card__name">Tec. Costa</h4>
+                            <span class="crew-card__role">Técnico EVA</span>
+                            <span class="crew-card__time">Ausente há 3h, 10 min</span>
+                        </div>
+                    </div>
+                    <div class="status-tag status-tag--absent">AUSENTE</div>
+                </article>
+
+                <article class="crew-card crew-card--success">
+                    <div class="crew-card__info">
+                        <div class="crew-card__avatar">OS</div>
+                        <div class="crew-card__details">
+                            <h4 class="crew-card__name">Op. Silva</h4>
+                            <span class="crew-card__role">Operador de Sistema</span>
+                            <span class="crew-card__time">On-line há 15h, 20 min</span>
+                        </div>
+                    </div>
+                    <div class="status-tag status-tag--online">ONLINE</div>
+                </article>
+
+                <article class="crew-card crew-card--success">
+                    <div class="crew-card__info">
+                        <div class="crew-card__avatar">ES</div>
+                        <div class="crew-card__details">
+                            <h4 class="crew-card__name">Eng. Santos</h4>
+                            <span class="crew-card__role">Eng. Sistemas</span>
+                            <span class="crew-card__time">On-line há 18h, 38 min</span>
+                        </div>
+                    </div>
+                    <div class="status-tag status-tag--online">ONLINE</div>
+                </article>
+
+                <article class="crew-card crew-card--danger">
+                    <div class="crew-card__info">
+                        <div class="crew-card__avatar">CG</div>
+                        <div class="crew-card__details">
+                            <h4 class="crew-card__name">Cmd. Garcia</h4>
+                            <span class="crew-card__role">Comandante</span>
+                            <span class="crew-card__time">Última vez on-line há 5h, 38 min</span>
+                        </div>
+                    </div>
+                    <div class="status-tag status-tag--offline">OFFLINE</div>
+                </article>
+            </div>
+        </div>
+
+        <div class="panel panel--biometrics">
+            <header class="panel__header">
+                <div class="panel__titles">
+                    <h3 class="panel__title">BIOMETRIA E SAÚDE</h3>
+                    <small class="panel__subtitle">Indicadores vitais da tripulação</small>
+                </div>
+            </header>
+
+            <div class="metric-list">
+                <div class="metric">
+                    <div class="metric__header">
+                        <span class="metric__label">SAÚDE GERAL</span>
+                        <strong class="metric__value">92%</strong>
+                    </div>
+                    <div class="metric__bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" aria-label="Nível de Saúde Geral">
+                        <div class="metric__fill metric__fill--green" style="width:92%;"></div>
+                    </div>
+                </div>
+
+                <div class="metric">
+                    <div class="metric__header">
+                        <span class="metric__label">TEMPERATURA MÉDIA</span>
+                        <strong class="metric__value">36.4°C</strong>
+                    </div>
+                    <div class="metric__bar" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" aria-label="Temperatura Média">
+                        <div class="metric__fill metric__fill--orange" style="width:72%;"></div>
+                    </div>
+                </div>
+
+                <div class="metric">
+                    <div class="metric__header">
+                        <span class="metric__label">FREQ. CARDÍACA</span>
+                        <strong class="metric__value">72 BPM</strong>
+                    </div>
+                    <div class="metric__bar" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" aria-label="Frequência Cardíaca">
+                        <div class="metric__fill metric__fill--purple" style="width:78%;"></div>
+                    </div>
+                </div>
+
+                <div class="metric">
+                    <div class="metric__header">
+                        <span class="metric__label">SATURAÇÃO O₂</span>
+                        <strong class="metric__value">98%</strong>
+                    </div>
+                    <div class="metric__bar" role="progressbar" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100" aria-label="Saturação de Oxigênio">
+                        <div class="metric__fill metric__fill--green" style="width:98%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
 
         <section id="alertas" class="page">
             <p>Conteúdo dos Alertas</p>
@@ -118,9 +323,15 @@
             <p>Conteúdo dos Relatórios</p>
         </section>
 
+        <div id="popup" class="overlay" onclick="this.style.display='none'">
+
+            <img src="./assets/images/popup-tripulacao.png"class="popup-img"onclick="event.stopPropagation()">
+        </div>
+
     </main>
 
     <script src="./assets/js/script.js"></script>
+    
 
 </body>
 
