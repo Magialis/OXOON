@@ -403,7 +403,7 @@ main {
 }
 
 /* BOTÕES GERAIS */
-.btn {
+.btn-setor {
     font-family: var(--font-text);
     cursor: pointer;
     font-weight: 600;
@@ -837,6 +837,10 @@ main {
 ::-webkit-scrollbar-thumb {
     background: #444;
     border-radius: 10px;
+}
+
+.metric__fill {
+    transition: width 0.8s ease-in-out;
 }
 
 .overlay {
