@@ -14,84 +14,973 @@
     <link rel="stylesheet" type="text/css"
         href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
     <link rel="stylesheet" href="./assets/css/style.css">
+
     <title>Oxoon</title>
 </head>
 
 <body>
+
     <aside class="sidebar">
+
         <h1 class="sidebar__logo">
             <img src="./assets/images/logo.png" alt="Oxoon">
         </h1>
+
         <nav class="sidebar__nav">
+
             <div class="nav__section">
                 <h2 class="nav__label">Principal</h2>
+
                 <ul class="nav__items">
+
                     <li class="nav__item active">
                         <a href="#visao-geral">Visão Geral</a>
                     </li>
+
                     <li class="nav__item">
                         <a href="#sistema-de-energia">Sistema de Energia</a>
                     </li>
+
                     <li class="nav__item">
                         <a href="#sistema-de-oxigenio">Sistema de Oxigênio</a>
                     </li>
+
                     <li class="nav__item">
                         <a href="#setores-de-consumo">Setores de Consumo</a>
                     </li>
+
                     <li class="nav__item">
                         <a href="#tripulacao-ativa">Tripulação Ativa</a>
                     </li>
+
                 </ul>
             </div>
+
             <div class="nav__section">
                 <h2 class="nav__label">Sistema</h2>
+
                 <ul class="nav__items">
+
                     <li class="nav__item nav__item--alert">
                         <a href="#alertas">
                             Alertas
                         </a>
+
                         <span class="badge">3</span>
                     </li>
+
                     <li class="nav__item">
                         <a href="#relatorios">Relatórios</a>
                     </li>
+
                     <li class="nav__item">
                         <a href="#configuracoes">Configurações</a>
                     </li>
+
                 </ul>
             </div>
+
         </nav>
+
         <div class="sidebar__footer">
+
             <div class="mission-box">
                 <h3 class="mission-box__label">Status da Missão</h3>
+
                 <p class="mission-box__value">
                     <span class="dot"></span>
                     ARTEMIS-7 ATIVO
                 </p>
             </div>
+
         </div>
+
     </aside>
 
     <header class="topbar">
+
         <div class="topbar__titles">
             <h2 class="topbar__title">Visão Geral da Base</h2>
             <h3 class="topbar__subtitle">Base Lunar OXOON · Missão Artemis-7</h3>
         </div>
+
         <div class="topbar__clock">
             <span class="clock__mjd">MJD 60850</span>
+
             <div class="clock__divisor"></div>
+
             <span class="clock__time" id="clock">--:--:--</span>
+
             <span class="clock__timezone">UTC</span>
         </div>
+
         <button class="btn btn--ghost">Alertas</button>
-        <a href="#relatorios" class="btn btn--primary">+ Relatório</a>
-        <button class="avatar" aria-label="Menu do Usuário">CG</button>
+
+        <a href="#relatorios" class="btn btn--primary">
+            + Relatório
+        </a>
+
+        <button class="avatar" aria-label="Menu do Usuário">
+            CG
+        </button>
+
     </header>
 
     <main>
 
         <section id="visao-geral" class="page active">
-            <p>Conteúdo da Visão Geral</p>
+
+            <div class="overview">
+
+                <!-- HERO -->
+                <section class="overview__hero">
+
+                    <div class="overview__hero-content">
+
+                        <h2 class="overview__hero-title">
+                            Bem-vindo, Comandante Garcia
+                        </h2>
+
+                        <p class="overview__hero-description">
+                            Base OXOON operacional. 10 módulos ativos, 12 tripulantes saudáveis.
+                            Sistema energético estável com 1 painel em manutenção.
+                            2 membros em operação EVA.
+                        </p>
+
+                    </div>
+
+                    <div class="overview__hero-stats">
+
+                        <div class="overview__stat">
+                            <span class="overview__stat-value overview__stat-value--success">
+                                98.2%
+                            </span>
+
+                            <span class="overview__stat-label">
+                                UPTIME
+                            </span>
+                        </div>
+
+                        <div class="overview__stat">
+                            <span class="overview__stat-value overview__stat-value--primary">
+                                10
+                            </span>
+
+                            <span class="overview__stat-label">
+                                MÓDULOS
+                            </span>
+                        </div>
+
+                        <div class="overview__stat">
+                            <span class="overview__stat-value overview__stat-value--secondary">
+                                12
+                            </span>
+
+                            <span class="overview__stat-label">
+                                TRIPULANTES
+                            </span>
+                        </div>
+
+                        <div class="overview__stat">
+                            <span class="overview__stat-value overview__stat-value--accent">
+                                127
+                            </span>
+
+                            <span class="overview__stat-label">
+                                DIAS EM MISSÃO
+                            </span>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- CARDS RESUMO -->
+                <section class="overview__summary">
+
+                    <article class="summary-card">
+
+                        <div class="summary-card__header">
+
+                            <div class="summary-card__icon">
+                                <i class="ph ph-lightning"></i>
+                            </div>
+
+                            <div>
+                                <h3 class="summary-card__title">
+                                    Sistema de Energia
+                                </h3>
+
+                                <span class="summary-card__subtitle">
+                                    Sistema operacional
+                                </span>
+                            </div>
+
+                        </div>
+
+                        <div class="summary-card__content">
+
+                            <div class="summary-card__metric">
+                                <span class="summary-card__label">
+                                    Produção
+                                </span>
+
+                                <span class="summary-card__value summary-card__value--secondary">
+                                    4.2 KWH
+                                </span>
+                            </div>
+
+                            <div class="summary-card__metric">
+                                <span class="summary-card__label">
+                                    Armazenamento
+                                </span>
+
+                                <span class="summary-card__value summary-card__value--primary">
+                                    86%
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                    <article class="summary-card">
+
+                        <div class="summary-card__header">
+
+                            <div class="summary-card__icon summary-card__icon--success">
+                                <i class="ph ph-leaf"></i>
+                            </div>
+
+                            <div>
+                                <h3 class="summary-card__title">
+                                    Sistema de O₂
+                                </h3>
+
+                                <span class="summary-card__subtitle">
+                                    Atmosfera estável
+                                </span>
+                            </div>
+
+                        </div>
+
+                        <div class="summary-card__content">
+
+                            <div class="summary-card__metric">
+                                <span class="summary-card__label">
+                                    Produção
+                                </span>
+
+                                <span class="summary-card__value summary-card__value--success">
+                                    3.1 KG/H
+                                </span>
+                            </div>
+
+                            <div class="summary-card__metric">
+                                <span class="summary-card__label">
+                                    Qualidade
+                                </span>
+
+                                <span class="summary-card__value summary-card__value--success">
+                                    21.3% O₂
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                    <article class="summary-card">
+
+                        <div class="summary-card__header">
+
+                            <div class="summary-card__icon summary-card__icon--primary">
+                                <i class="ph ph-buildings"></i>
+                            </div>
+
+                            <div>
+                                <h3 class="summary-card__title">
+                                    Setores de Consumo
+                                </h3>
+
+                                <span class="summary-card__subtitle">
+                                    10 módulos ativos
+                                </span>
+                            </div>
+
+                        </div>
+
+                        <div class="summary-card__content">
+
+                            <div class="summary-card__metric">
+                                <span class="summary-card__label">
+                                    Ocupação Total
+                                </span>
+
+                                <span class="summary-card__value summary-card__value--primary">
+                                    18 pessoas
+                                </span>
+                            </div>
+
+                            <div class="summary-card__metric">
+                                <span class="summary-card__label">
+                                    Temp. Média
+                                </span>
+
+                                <span class="summary-card__value summary-card__value--secondary">
+                                    21.3°C
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                    <article class="summary-card">
+
+                        <div class="summary-card__header">
+
+                            <div class="summary-card__icon summary-card__icon--secondary">
+                                <i class="ph ph-user"></i>
+                            </div>
+
+                            <div>
+                                <h3 class="summary-card__title">
+                                    Tripulação Ativa
+                                </h3>
+
+                                <span class="summary-card__subtitle">
+                                    Todos saudáveis
+                                </span>
+                            </div>
+
+                        </div>
+
+                        <div class="summary-card__content">
+
+                            <div class="summary-card__metric">
+                                <span class="summary-card__label">
+                                    Em EVA
+                                </span>
+
+                                <span class="summary-card__value summary-card__value--secondary">
+                                    2 membros
+                                </span>
+                            </div>
+
+                            <div class="summary-card__metric">
+                                <span class="summary-card__label">
+                                    Saúde Coletiva
+                                </span>
+
+                                <span class="summary-card__value summary-card__value--success">
+                                    98.2%
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+                <!-- GRID PRINCIPAL -->
+                <section class="overview__resources">
+
+                    <!-- COLUNA ESQUERDA -->
+                    <div class="overview__main-column">
+
+                        <div class="section-header">
+                            <h2 class="section-header__title">
+                                STATUS DE RECURSOS
+                            </h2>
+                        </div>
+
+                        <div class="resource-grid">
+
+                            <!-- ENERGIA -->
+                            <article class="resource-card resource-card--secondary">
+
+                                <div class="resource-card__header">
+
+                                    <div class="resource-card__icon--lightning">
+                                        <i class="ph ph-lightning"></i>
+                                    </div>
+
+                                    <span class="resource-card__status">
+                                        NORMAL
+                                    </span>
+
+                                </div>
+
+                                <h3 class="resource-card__title">
+                                    Energia Solar
+                                </h3>
+
+                                <span class="resource-card__value">
+                                    78%
+                                </span>
+
+                                <div class="resource-card__bar">
+                                    <div
+                                        class="resource-card__progress resource-card__progress--secondary"></div>
+                                </div>
+
+                                <div class="resource-card__footer">
+                                    <span>
+                                        4.2 kWh disponível
+                                    </span>
+
+                                    <span>
+                                        ↑ 8%
+                                    </span>
+                                </div>
+
+                            </article>
+
+                            <!-- ÁGUA -->
+                            <article class="resource-card resource-card--primary">
+
+                                <div class="resource-card__header">
+
+                                    <div class="resource-card__icon--drop">
+                                        <i class="ph ph-drop"></i>
+                                    </div>
+
+                                    <span class="resource-card__status resource-card__status--alert">
+                                        ATENÇÃO
+                                    </span>
+
+                                </div>
+
+                                <h3 class="resource-card__title">
+                                    Reserva de Água
+                                </h3>
+
+                                <span class="resource-card__value">
+                                    41%
+                                </span>
+
+                                <div class="resource-card__bar">
+                                    <div class="resource-card__progress resource-card__progress--primary"></div>
+                                </div>
+
+                                <div class="resource-card__footer">
+                                    <span>
+                                        820 L restantes
+                                    </span>
+
+                                    <span>
+                                        ↓ 15%
+                                    </span>
+                                </div>
+
+                            </article>
+
+                            <!-- OXIGÊNIO -->
+                            <article class="resource-card resource-card--success">
+
+                                <div class="resource-card__header">
+
+                                    <div class="resource-card__icon--leaf">
+                                        <i class="ph ph-leaf"></i>
+                                    </div>
+
+                                    <span class="resource-card__status">
+                                        NORMAL
+                                    </span>
+
+                                </div>
+
+                                <h3 class="resource-card__title">
+                                    Oxigênio
+                                </h3>
+
+                                <span class="resource-card__value">
+                                    92%
+                                </span>
+
+                                <div class="resource-card__bar">
+                                    <div class="resource-card__progress resource-card__progress--success"></div>
+                                </div>
+
+                                <div class="resource-card__footer">
+                                    <span>
+                                        21.3% pressão O₂
+                                    </span>
+
+                                    <span>
+                                        ↑ 1%
+                                    </span>
+                                </div>
+
+                            </article>
+
+                        </div>
+
+                        <!-- INDICADORES -->
+                        <article class="environment-card">
+
+                            <h2 class="environment-card__title">
+                                Indicadores Ambientais
+                            </h2>
+
+                            <p class="environment-card__subtitle">
+                                Pressão, temperatura, ar e radiação
+                            </p>
+
+                            <div class="environment-card__metrics">
+
+                                <div class="circle-indicator">
+
+                                    <div class="circle-indicator__ring circle-indicator__ring--primary"
+                                        style="--progress: 75;">
+
+                                        <span class="circle-indicator__value--pressure">
+                                            75%
+                                        </span>
+
+                                    </div>
+
+                                    <span class="circle-indicator__label">
+                                        Pressão
+                                    </span>
+
+                                </div>
+
+                                <div class="circle-indicator">
+
+                                    <div class="circle-indicator__ring circle-indicator__ring--secondary"
+                                        style="--progress: 50;">
+
+                                        <span class="circle-indicator__value--temperature">
+                                            50%
+                                        </span>
+
+                                    </div>
+
+                                    <span class="circle-indicator__label">
+                                        Temp. Int.
+                                    </span>
+
+                                </div>
+
+                                <div class="circle-indicator">
+
+                                    <div class="circle-indicator__ring circle-indicator__ring--success"
+                                        style="--progress: 75;">
+
+                                        <span class="circle-indicator__value--air">
+                                            75%
+                                        </span>
+
+                                    </div>
+
+                                    <span class="circle-indicator__label">
+                                        Qualid. Ar
+                                    </span>
+
+                                </div>
+
+                                <div class="circle-indicator">
+
+                                    <div class="circle-indicator__ring circle-indicator__ring--warning"
+                                        style="--progress: 25;">
+
+                                        <span class="circle-indicator__value--radiation">
+                                            25%
+                                        </span>
+
+                                    </div>
+
+                                    <span class="circle-indicator__label">
+                                        Radiação
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+                        
+                        <!-- IMAGEM DO GRÁFICO -->
+                        <article class="environment-card">
+                            <section class="overview__image">
+                                <img src="./assets/images/grafico-7d-visao-geral.png" 
+                                alt="Evolução do consumo de energia e oxigênio nos últimos 7 dias" 
+                                class="overview__image-content">
+                            </section>
+
+                        </article>
+
+                    </div>
+
+                    <aside class="overview__sidebar">
+
+                        <article class="sidebar-panel">
+
+                            <div class="sidebar-panel__header">
+
+                                <div>
+                                    <h2 class="sidebar-panel__title">
+                                        Tripulação Ativa
+                                    </h2>
+
+                                    <span class="sidebar-panel__subtitle">
+                                        12 membros · Sinais vitais
+                                    </span>
+                                </div>
+
+                                <button class="btn btn--ghost sidebar-panel__button">
+                                    Ver todos
+                                </button>
+
+                            </div>
+
+                            <div class="crew-list">
+
+                                <article class="crew-card">
+
+                                    <div class="crew-card__profile">
+
+                                        <div class="crew-card__avatar crew-card__avatar--primary">
+                                            CG
+                                        </div>
+
+                                        <div class="crew-card__info">
+                                            <h3 class="crew-card__name">
+                                                Cmdt. Garcia
+                                            </h3>
+
+                                            <span class="crew-card__role">
+                                                Comandante
+                                            </span>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="crew-card__metrics">
+
+                                        <div class="crew-card__metric">
+                                            <span class="crew-card__value crew-card__value--success">
+                                                98BPM
+                                            </span>
+
+                                            <span class="crew-card__label">
+                                                Freq.
+                                            </span>
+                                        </div>
+
+                                        <div class="crew-card__metric">
+                                            <span class="crew-card__value crew-card__value--success">
+                                                36.5°
+                                            </span>
+
+                                            <span class="crew-card__label">
+                                                Temp.
+                                            </span>
+                                        </div>
+
+                                    </div>
+
+                                </article>
+
+                                <article class="crew-card">
+
+                                    <div class="crew-card__profile">
+
+                                        <div class="crew-card__avatar crew-card__avatar--success">
+                                            AL
+                                        </div>
+
+                                        <div class="crew-card__info">
+                                            <h3 class="crew-card__name">
+                                                Dra. Lima
+                                            </h3>
+
+                                            <span class="crew-card__role">
+                                                Médica-Chefe
+                                            </span>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="crew-card__metrics">
+
+                                        <div class="crew-card__metric">
+                                            <span class="crew-card__value crew-card__value--success">
+                                                72BPM
+                                            </span>
+
+                                            <span class="crew-card__label">
+                                                Freq.
+                                            </span>
+                                        </div>
+
+                                        <div class="crew-card__metric">
+                                            <span class="crew-card__value crew-card__value--success">
+                                                36.2°
+                                            </span>
+
+                                            <span class="crew-card__label">
+                                                Temp.
+                                            </span>
+                                        </div>
+
+                                    </div>
+
+                                </article>
+
+                                <article class="crew-card">
+
+                                    <div class="crew-card__profile">
+
+                                        <div class="crew-card__avatar crew-card__avatar--secondary">
+                                            RS
+                                        </div>
+
+                                        <div class="crew-card__info">
+                                            <h3 class="crew-card__name">
+                                                Eng. Santos
+                                            </h3>
+
+                                            <span class="crew-card__role">
+                                                Eng. Sistemas
+                                            </span>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="crew-card__metrics">
+
+                                        <div class="crew-card__metric">
+                                            <span class="crew-card__value crew-card__value--success">
+                                                85BPM
+                                            </span>
+
+                                            <span class="crew-card__label">
+                                                Freq.
+                                            </span>
+                                        </div>
+
+                                        <div class="crew-card__metric">
+                                            <span class="crew-card__value crew-card__value--success">
+                                                36.8°
+                                            </span>
+
+                                            <span class="crew-card__label">
+                                                Temp.
+                                            </span>
+                                        </div>
+
+                                    </div>
+
+                                </article>
+
+                            </div>
+
+                        </article>
+
+                        <div class="section-header section-header--sidebar">
+                            <h2 class="section-header__title">
+                                Módulos da Colônia
+                            </h2>
+                        </div>
+
+                        <article class="sidebar-panel">
+
+                            <div class="sidebar-panel__header">
+
+                                <div>
+                                    <h2 class="sidebar-panel__title">
+                                        Módulos Críticos
+                                    </h2>
+
+                                    <span class="sidebar-panel__subtitle">
+                                        3 módulos requerem atenção
+                                    </span>
+                                </div>
+
+                                <button class="btn btn--ghost sidebar-panel__button">
+                                    Ver todos
+                                </button>
+
+                            </div>
+
+                            <div class="module-list">
+
+                                <article class="module-card">
+
+                                    <div class="module-card__header">
+
+                                        <div>
+                                            <h3 class="module-card__title">
+                                                Módulo Central
+                                            </h3>
+
+                                            <span class="module-card__id">
+                                                MCT-001
+                                            </span>
+                                        </div>
+
+                                        <span class="module-card__status"></span>
+
+                                    </div>
+
+                                    <div class="module-card__metrics">
+
+                                        <div class="module-card__metric">
+                                            <span class="module-card__value module-card__value--secondary">
+                                                85%
+                                            </span>
+
+                                            <span class="module-card__label">
+                                                Energia
+                                            </span>
+                                        </div>
+
+                                        <div class="module-card__metric">
+                                            <span class="module-card__value module-card__value--primary">
+                                                62%
+                                            </span>
+
+                                            <span class="module-card__label">
+                                                Água
+                                            </span>
+                                        </div>
+
+                                        <div class="module-card__metric">
+                                            <span class="module-card__value module-card__value--success">
+                                                96%
+                                            </span>
+
+                                            <span class="module-card__label">
+                                                O₂
+                                            </span>
+                                        </div>
+
+                                    </div>
+
+                                </article>
+
+                                <article class="module-card">
+
+                                    <div class="module-card__header">
+
+                                        <div>
+                                            <h3 class="module-card__title">
+                                                Módulo Agrícola
+                                            </h3>
+
+                                            <span class="module-card__id">
+                                                MAG-002
+                                            </span>
+                                        </div>
+
+                                        <span class="module-card__status module-card__status--warning"></span>
+
+                                    </div>
+
+                                    <div class="module-card__metrics">
+
+                                        <div class="module-card__metric">
+                                            <span class="module-card__value module-card__value--secondary">
+                                                72%
+                                            </span>
+
+                                            <span class="module-card__label">
+                                                Energia
+                                            </span>
+                                        </div>
+
+                                        <div class="module-card__metric">
+                                            <span class="module-card__value module-card__value--primary">
+                                                38%
+                                            </span>
+
+                                            <span class="module-card__label">
+                                                Água
+                                            </span>
+                                        </div>
+
+                                        <div class="module-card__metric">
+                                            <span class="module-card__value module-card__value--secondary">
+                                                21%
+                                            </span>
+
+                                            <span class="module-card__label">
+                                                Alimentos
+                                            </span>
+                                        </div>
+
+                                    </div>
+
+                                </article>
+
+                                <article class="module-card">
+
+                                    <div class="module-card__header">
+
+                                        <div>
+                                            <h3 class="module-card__title">
+                                                Módulo Pesquisa
+                                            </h3>
+
+                                            <span class="module-card__id">
+                                                MPQ-003
+                                            </span>
+                                        </div>
+
+                                        <span class="module-card__status"></span>
+
+                                    </div>
+
+                                    <div class="module-card__metrics">
+
+                                        <div class="module-card__metric">
+                                            <span class="module-card__value module-card__value--secondary">
+                                                91%
+                                            </span>
+
+                                            <span class="module-card__label">
+                                                Energia
+                                            </span>
+                                        </div>
+
+                                        <div class="module-card__metric">
+                                            <span class="module-card__value module-card__value--primary">
+                                                55%
+                                            </span>
+
+                                            <span class="module-card__label">
+                                                Água
+                                            </span>
+                                        </div>
+
+                                        <div class="module-card__metric">
+                                            <span class="module-card__value module-card__value--success">
+                                                94%
+                                            </span>
+
+                                            <span class="module-card__label">
+                                                O₂
+                                            </span>
+                                        </div>
+
+                                    </div>
+
+                                </article>
+
+                            </div>
+
+                        </article>
+
+                    </aside>
+
+                </section>
+
+            </div>
+
         </section>
 
         <section id="sistema-de-energia" class="page">
