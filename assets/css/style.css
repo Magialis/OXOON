@@ -645,53 +645,26 @@ main {
     animation: pulsar-texto-sincronizado 2s infinite ease-in-out; 
 }
 
-/* RESPONSIVIDADE */
-@media (max-width: 1200px) {
-    .alertas-page {
-        gap: 16px;
-    }
-    .alertas-page__grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-    }
-    .lista-alertas {
-        width: 280px;
-    }
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+
+    width: 8px;
+
 }
 
-@media (max-width: 900px) {
-    .alertas-page {
-        flex-direction: column-reverse;
-        gap: 24px;
-    }
-    .lista-alertas {
-        width: 100%;
-        height: auto;
-    }
-    .lista-alertas__totalizer {
-        margin-top: 24px;
-    }
-    .alertas-page__grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+::-webkit-scrollbar-track {
+
+    background: #161616;
+
 }
 
-@media (max-width: 600px) {
-    .alertas-page__grid {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-    .alerta-card {
-        min-height: 190px;
-        padding: 20px;
-    }
-    .alerta-card__title {
-        font-size: 1.15rem;
-    }
-    .alerta-card__status {
-        top: 20px;
-        right: 20px;
-    }
+::-webkit-scrollbar-thumb {
+
+    background: #444;
+
+    border-radius: 10px;
+
 }
 
 /* ------------------- */
