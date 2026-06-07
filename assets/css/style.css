@@ -404,6 +404,7 @@ main {
 
 /* BOTÕES GERAIS */
 .btn {
+    font-family: var(--font-text);
     cursor: pointer;
     font-weight: 600;
     transition: 0.25s ease;
@@ -445,6 +446,7 @@ main {
 }
 
 .hero-card__description {
+    font-family: var(--font-text);
     color: var(--text-color);
     font-size: var(--fs-body);
     max-width: 450px;
@@ -472,11 +474,12 @@ main {
 .hero-card__status-item:nth-child(3) .hero-card__status-value { color: var(--red-color); }
 
 .hero-card__status-label {
+    font-family: var(--font-text);
     font-size: .7rem;
     color: var(--text-color);
 }
 
-/* PAINÉIS */
+/* PAINÉIS E ESTRUTURAS DE CONTEÚDO */
 .panel {
     background: var(--bg-color);
     border: 1px solid #f1f7f7b4;
@@ -513,13 +516,13 @@ main {
 }
 
 .panel__subtitle {
+    font-family: var(--font-text);
     margin-top: 3px;
     color: var(--text-color);
     font-size: .7rem;
     line-height: 1;
     display: block;
 }
-
 
 /* COMPONENTES INTERNOS DOS PAINÉIS */
 
@@ -530,6 +533,7 @@ main {
 }
 
 .time-switch__btn {
+    font-family: var(--font-text);
     background: rgba(255, 255, 255, 0.12);
     color: var(--text-color);
     border: none;
@@ -553,6 +557,7 @@ main {
     background: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
     background-size: 40px 40px;
+    box-sizing: border-box;
 }
 
 .chart-legend {
@@ -569,6 +574,10 @@ main {
     gap: 8px;
     color: var(--text-color);
     font-size: .85rem;
+}
+
+.chart-legend__label {
+    font-family: var(--font-text);
 }
 
 .chart-legend__dot {
@@ -607,6 +616,7 @@ main {
 }
 
 .chart__x-axis {
+    font-family: var(--font-text);
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
@@ -616,14 +626,15 @@ main {
 
 /* Mapa de Localização */
 .panel--location {
-    height: 300px;
+    min-height: 300px;
+    height: auto;
     flex: 1;
 }
 
 .map {
     position: relative;
     overflow: hidden;
-    height: 320px;
+    height: 350px;
     border-radius: 8px;
     border: 1px solid var(--border-color);
     display: flex;
@@ -633,6 +644,7 @@ main {
 }
 
 .map__label {
+    font-family: var(--font-text);
     color: var(--text-color);
     font-size: .8rem;
     letter-spacing: 1px;
@@ -655,7 +667,7 @@ main {
     filter: brightness(.55) contrast(1.1);
 }
 
-/* Lista da Tripulação */
+/* LISTA DA TRIPULAÇÃO */
 .crew-list {
     display: flex;
     flex-direction: column;
@@ -678,7 +690,6 @@ main {
     transform: translateX(3px);
 }
 
-/* Modificadores de estado do card */
 .crew-card--warning { background: #5c2d1f; }
 .crew-card--success { background: #23442d; }
 .crew-card--danger { background: #4f1f1f; }
@@ -690,6 +701,7 @@ main {
 }
 
 .crew-card__avatar {
+    font-family: var(--font-number);
     border-radius: 50%;
     background: linear-gradient(135deg, var(--primary-color), #6a00ff);
     display: flex;
@@ -698,23 +710,26 @@ main {
     font-weight: 700;
     width: 36px;
     height: 36px;
-    font-size: .7rem;
+    font-size: .8rem;
     box-shadow: 0 0 12px rgba(157, 0, 255, 0.25);
 }
 
 .crew-card__name {
+    font-family: var(--font-title);
     font-size: .9rem;
     margin: 0 0 4px 0;
     color: var(--title-color);
 }
 
 .crew-card__role {
+    font-family: var(--font-text);
     font-size: .75rem;
     color: var(--text-color);
     display: block;
 }
 
 .crew-card__time {
+    font-family: var(--font-text);
     display: block;
     margin-top: 4px;
     font-size: .75rem;
@@ -723,6 +738,7 @@ main {
 
 /* Tags de Status */
 .status-tag {
+    font-family: var(--font-text);
     display: flex;
     align-items: center;
     gap: 6px;
@@ -748,11 +764,11 @@ main {
 .status-tag--absent::before { background: var(--secondary-color); box-shadow: 0 0 8px var(--secondary-color); }
 
 
-/* Biometria */
+/* BIOMETRIA */
 .panel--biometrics {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: auto;
     min-height: 280px;
 }
 
@@ -776,12 +792,14 @@ main {
 }
 
 .metric__label {
+    font-family: var(--font-text);
     color: var(--text-color);
     font-size: .75rem;
 }
 
 .metric__value {
-    font-size: .8rem;
+    font-family: var(--font-number);
+    font-size: .95rem;
     text-shadow: 0 0 10px currentColor;
 }
 
@@ -807,8 +825,7 @@ main {
 .metric__fill--orange { background: var(--secondary-color); box-shadow: 0 0 10px var(--secondary-color); }
 .metric__fill--purple { background: var(--primary-color); box-shadow: 0 0 10px var(--primary-color); }
 
-
-/* SCROLLBAR E POPUP */
+/* SCROLLBAR */
 ::-webkit-scrollbar {
     width: 8px;
 }
