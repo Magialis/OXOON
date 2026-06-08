@@ -69,5 +69,59 @@ navItems.forEach(item => {
 
 
 // JS DOS RELATÓRIOS
+const filterButtons = document.querySelectorAll('[data-filter]')
+const subfilterButtons = document.querySelectorAll('[data-subfilter]')
+const reportCards = document.querySelectorAll('.report-card')
 
+let currentFilter = 'all'
+let currentSubfilter = 'all'
+
+function filterReports() {
+    reportCards.forEach(card => {
+        const category = card.dataset.category
+        const subcategory = card.dataset.subcategory
+
+        const matchCategory =
+            currentFilter === 'all' ||
+            category === currentFilter
+
+        const matchSubcategory =
+            currentSubfilter === 'all' ||
+            subcategory === currentSubfilter
+
+        if (matchCategory && matchSubcategory) {
+            card.style.display = 'flex'
+        } else {
+            card.style.display = 'none'
+        }
+    })
+}
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        filterButtons.forEach(btn =>
+            btn.classList.remove('active')
+        )
+
+        button.classList.add('active')
+
+        currentFilter = button.dataset.filter
+
+        filterReports()
+    })
+})
+
+subfilterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        subfilterButtons.forEach(btn =>
+            btn.classList.remove('active')
+        )
+
+        button.classList.add('active')
+
+        currentSubfilter = button.dataset.subfilter
+
+        filterReports()
+    })
+})
 // -----------------

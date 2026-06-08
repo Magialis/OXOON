@@ -115,7 +115,583 @@
         </section>
 
         <section id="relatorios" class="page">
-            <p>Conteúdo dos Relatórios</p>
+            <section class="reports-section">
+
+                <!-- BARRA INFORMATIVA -->
+                <div class="reports-banner">
+                    <div class="reports-banner__info">
+                        <h2 class="reports-banner__title">
+                            Central de Relatórios
+                        </h2>
+
+                        <p class="reports-banner__text">
+                            Logs operacionais e registros técnicos da missão Artemis-7.
+                        </p>
+                    </div>
+
+                    <div class="reports-banner__stats">
+                        <div class="report-stat">
+                            <span class="report-stat__value">18</span>
+                            <span class="report-stat__label">TOTAL</span>
+                        </div>
+
+                        <div class="report-stat">
+                            <span class="report-stat__value report-stat__value--energy">
+                                09
+                            </span>
+                            <span class="report-stat__label">ENERGIA</span>
+                        </div>
+
+                        <div class="report-stat">
+                            <span class="report-stat__value report-stat__value--oxygen">
+                                09
+                            </span>
+                            <span class="report-stat__label">OXIGÊNIO</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FILTROS -->
+                <div class="reports-filters">
+
+                    <div class="filters-row">
+                        <button class="filter-btn active" data-filter="all">
+                            Todas
+                        </button>
+
+                        <button class="filter-btn" data-filter="energia">
+                            Energia
+                        </button>
+
+                        <button class="filter-btn" data-filter="oxigenio">
+                            Oxigênio
+                        </button>
+                    </div>
+
+                    <div class="filters-row">
+                        <button class="filter-btn subfilter" data-subfilter="all">
+                            Todos
+                        </button>
+
+                        <button class="filter-btn subfilter" data-subfilter="consumo">
+                            Consumo
+                        </button>
+
+                        <button class="filter-btn subfilter" data-subfilter="producao">
+                            Produção
+                        </button>
+
+                        <button class="filter-btn subfilter" data-subfilter="manutencao">
+                            Manutenção
+                        </button>
+
+                        <button class="filter-btn subfilter" data-subfilter="emergencia">
+                            Emergência
+                        </button>
+                    </div>
+                </div>
+
+                <!-- GRID -->
+                <div class="reports-grid">
+
+                    <!-- CARD -->
+                    <article class="report-card" data-category="energia" data-subcategory="manutencao">
+
+                        <div class="report-card__tags">
+                            <span class="tag tag--energy">
+                                Energia
+                            </span>
+
+                            <span class="tag tag--maintenance">
+                                Manutenção
+                            </span>
+                        </div>
+
+                        <h3 class="report-card__title">
+                            Reunião Técnica dos Painéis Solares
+                        </h3>
+
+                        <p class="report-card__text">
+                            Equipe de engenharia definiu cronograma
+                            semanal para limpeza preventiva dos módulos
+                            fotovoltaicos externos.
+                        </p>
+
+                        <span class="report-card__date">
+                            MJD 60842.605
+                        </span>
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="report-card" data-category="energia" data-subcategory="manutencao">
+
+                        <div class="report-card__tags">
+                            <span class="tag tag--energy">
+                                Energia
+                            </span>
+
+                            <span class="tag tag--maintenance">
+                                Manutenção
+                            </span>
+                        </div>
+
+                        <h3 class="report-card__title">
+                            Ata da Revisão dos Conversores
+                        </h3>
+
+                        <p class="report-card__text">
+                            Equipe técnica aprovou recalibração preventiva
+                            dos conversores do setor de engenharia.
+                        </p>
+
+                        <span class="report-card__date">
+                            MJD 60842.441
+                        </span>
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="report-card" data-category="energia" data-subcategory="emergencia">
+
+                        <div class="report-card__tags">
+                            <span class="tag tag--energy">
+                                Energia
+                            </span>
+
+                            <span class="tag tag--danger">
+                                Emergência
+                            </span>
+                        </div>
+
+                        <h3 class="report-card__title">
+                            Ata da Oscilação Energética
+                        </h3>
+
+                        <p class="report-card__text">
+                            Conselho técnico autorizou ativação dos
+                            geradores auxiliares após instabilidade
+                            registrada no setor de mineração.
+                        </p>
+
+                        <span class="report-card__date">
+                            MJD 60842.284
+                        </span>
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="report-card" data-category="oxigenio" data-subcategory="producao">
+
+                        <div class="report-card__tags">
+                            <span class="tag tag--oxygen">
+                                Oxigênio
+                            </span>
+
+                            <span class="tag tag--production">
+                                Produção
+                            </span>
+                        </div>
+
+                        <h3 class="report-card__title">
+                            Registro da Bioestação Norte
+                        </h3>
+
+                        <p class="report-card__text">
+                            Culturas hidropônicas mantiveram estabilidade
+                            de produção durante o último ciclo lunar.
+                        </p>
+
+                        <span class="report-card__date">
+                            MJD 60842.118
+                        </span>
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="report-card" data-category="energia" data-subcategory="consumo">
+
+                        <div class="report-card__tags">
+                            <span class="tag tag--energy">
+                                Energia
+                            </span>
+
+                            <span class="tag tag--consumption">
+                                Consumo
+                            </span>
+                        </div>
+
+                        <h3 class="report-card__title">
+                            Relatório do Setor de Mineração
+                        </h3>
+
+                        <p class="report-card__text">
+                            Consumo energético permaneceu acima da média
+                            operacional durante perfuração profunda.
+                        </p>
+
+                        <span class="report-card__date">
+                            MJD 60841.903
+                        </span>
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="report-card" data-category="oxigenio" data-subcategory="emergencia">
+
+                        <div class="report-card__tags">
+                            <span class="tag tag--oxygen">
+                                Oxigênio
+                            </span>
+
+                            <span class="tag tag--danger">
+                                Emergência
+                            </span>
+                        </div>
+
+                        <h3 class="report-card__title">
+                            Reunião de Contenção Atmosférica
+                        </h3>
+
+                        <p class="report-card__text">
+                            Equipe operacional iniciou protocolo de
+                            isolamento preventivo após queda parcial
+                            na pressão do módulo B-2.
+                        </p>
+
+                        <span class="report-card__date">
+                            MJD 60841.744
+                        </span>
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="report-card" data-category="oxigenio" data-subcategory="manutencao">
+
+                        <div class="report-card__tags">
+                            <span class="tag tag--oxygen">
+                                Oxigênio
+                            </span>
+
+                            <span class="tag tag--maintenance">
+                                Manutenção
+                            </span>
+                        </div>
+
+                        <h3 class="report-card__title">
+                            Revisão do Sistema Atmosférico
+                        </h3>
+
+                        <p class="report-card__text">
+                            Técnicos concluíram inspeção completa nos
+                            filtros centrais do habitat principal.
+                        </p>
+
+                        <span class="report-card__date">
+                            MJD 60841.557
+                        </span>
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="report-card" data-category="oxigenio" data-subcategory="consumo">
+
+                        <div class="report-card__tags">
+                            <span class="tag tag--oxygen">
+                                Oxigênio
+                            </span>
+
+                            <span class="tag tag--consumption">
+                                Consumo
+                            </span>
+                        </div>
+
+                        <h3 class="report-card__title">
+                            Ata de Consumo Habitacional
+                        </h3>
+
+                        <p class="report-card__text">
+                            Registrado aumento de utilização no módulo
+                            habitacional após expansão da tripulação ativa.
+                        </p>
+
+                        <span class="report-card__date">
+                            MJD 60841.382
+                        </span>
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="report-card" data-category="energia" data-subcategory="emergencia">
+
+                        <div class="report-card__tags">
+                            <span class="tag tag--energy">
+                                Energia
+                            </span>
+
+                            <span class="tag tag--danger">
+                                Emergência
+                            </span>
+                        </div>
+
+                        <h3 class="report-card__title">
+                            Relatório da Sobrecarga Central
+                        </h3>
+
+                        <p class="report-card__text">
+                            Pico de consumo forçou redistribuição
+                            temporária da rede elétrica principal
+                            durante operações externas.
+                        </p>
+
+                        <span class="report-card__date">
+                            MJD 60840.982
+                        </span>
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="report-card" data-category="energia" data-subcategory="producao">
+
+                        <div class="report-card__tags">
+                            <span class="tag tag--energy">
+                                Energia
+                            </span>
+
+                            <span class="tag tag--production">
+                                Produção
+                            </span>
+                        </div>
+
+                        <h3 class="report-card__title">
+                            Reunião de Eficiência Solar
+                        </h3>
+
+                        <p class="report-card__text">
+                            Conselho técnico aprovou expansão dos painéis
+                            auxiliares do módulo orbital externo.
+                        </p>
+
+                        <span class="report-card__date">
+                            MJD 60840.772
+                        </span>
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="report-card" data-category="energia" data-subcategory="producao">
+
+                        <div class="report-card__tags">
+                            <span class="tag tag--energy">
+                                Energia
+                            </span>
+
+                            <span class="tag tag--production">
+                                Produção
+                            </span>
+                        </div>
+
+                        <h3 class="report-card__title">
+                            Relatório de Eficiência Energética
+                        </h3>
+
+                        <p class="report-card__text">
+                            Produção solar apresentou estabilidade
+                            operacional durante o último ciclo orbital lunar.
+                        </p>
+
+                        <span class="report-card__date">
+                            MJD 60840.739
+                        </span>
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="report-card" data-category="energia" data-subcategory="consumo">
+
+                        <div class="report-card__tags">
+                            <span class="tag tag--energy">
+                                Energia
+                            </span>
+
+                            <span class="tag tag--consumption">
+                                Consumo
+                            </span>
+                        </div>
+
+                        <h3 class="report-card__title">
+                            Análise de Demanda da Mineração
+                        </h3>
+
+                        <p class="report-card__text">
+                            Setor de mineração manteve consumo acima da
+                            média prevista durante operações noturnas.
+                        </p>
+
+                        <span class="report-card__date">
+                            MJD 60840.464
+                        </span>
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="report-card" data-category="oxigenio" data-subcategory="consumo">
+
+                        <div class="report-card__tags">
+                            <span class="tag tag--oxygen">
+                                Oxigênio
+                            </span>
+
+                            <span class="tag tag--consumption">
+                                Consumo
+                            </span>
+                        </div>
+
+                        <h3 class="report-card__title">
+                            Ata do Setor Habitacional
+                        </h3>
+
+                        <p class="report-card__text">
+                            Tripulação registrou aumento temporário de
+                            consumo após ativação do módulo B-3.
+                        </p>
+
+                        <span class="report-card__date">
+                            MJD 60840.331
+                        </span>
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="report-card" data-category="oxigenio" data-subcategory="emergencia">
+
+                        <div class="report-card__tags">
+                            <span class="tag tag--oxygen">
+                                Oxigênio
+                            </span>
+
+                            <span class="tag tag--danger">
+                                Emergência
+                            </span>
+                        </div>
+
+                        <h3 class="report-card__title">
+                            Registro de Vazamento Secundário
+                        </h3>
+
+                        <p class="report-card__text">
+                            Técnicos concluíram selagem emergencial
+                            de microfissura detectada no corredor
+                            de acesso ao laboratório orbital.
+                        </p>
+
+                        <span class="report-card__date">
+                            MJD 60840.118
+                        </span>
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="report-card" data-category="energia" data-subcategory="manutencao">
+
+                        <div class="report-card__tags">
+                            <span class="tag tag--energy">
+                                Energia
+                            </span>
+
+                            <span class="tag tag--maintenance">
+                                Manutenção
+                            </span>
+                        </div>
+
+                        <h3 class="report-card__title">
+                            Relatório da Central Elétrica
+                        </h3>
+
+                        <p class="report-card__text">
+                            Procedimentos de redundância energética foram
+                            atualizados pela equipe operacional.
+                        </p>
+
+                        <span class="report-card__date">
+                            MJD 60839.992
+                        </span>
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="report-card" data-category="oxigenio" data-subcategory="manutencao">
+
+                        <div class="report-card__tags">
+                            <span class="tag tag--oxygen">
+                                Oxigênio
+                            </span>
+
+                            <span class="tag tag--maintenance">
+                                Manutenção
+                            </span>
+                        </div>
+
+                        <h3 class="report-card__title">
+                            Revisão dos Filtros Atmosféricos
+                        </h3>
+
+                        <p class="report-card__text">
+                            Equipe técnica aprovou substituição preventiva
+                            dos filtros centrais do setor habitacional.
+                        </p>
+
+                        <span class="report-card__date">
+                            MJD 60839.929
+                        </span>
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="report-card" data-category="oxigenio" data-subcategory="producao">
+
+                        <div class="report-card__tags">
+                            <span class="tag tag--oxygen">
+                                Oxigênio
+                            </span>
+
+                            <span class="tag tag--production">
+                                Produção
+                            </span>
+                        </div>
+
+                        <h3 class="report-card__title">
+                            Relatório Agrícola Semanal
+                        </h3>
+
+                        <p class="report-card__text">
+                            Produção biológica de oxigênio permaneceu
+                            estável nas estufas hidropônicas centrais.
+                        </p>
+
+                        <span class="report-card__date">
+                            MJD 60839.615
+                        </span>
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="report-card" data-category="oxigenio" data-subcategory="producao">
+
+                        <div class="report-card__tags">
+                            <span class="tag tag--oxygen">
+                                Oxigênio
+                            </span>
+
+                            <span class="tag tag--production">
+                                Produção
+                            </span>
+                        </div>
+
+                        <h3 class="report-card__title">
+                            Registro da Bioestação Agrícola
+                        </h3>
+
+                        <p class="report-card__text">
+                            Produção de oxigênio pelas culturas hidropônicas
+                            permaneceu dentro da margem ideal.
+                        </p>
+
+                        <span class="report-card__date">
+                            MJD 60837.778
+                        </span>
+                    </article>
+
+                    
+
+                    
+
+                </div>
+
+            </section>
         </section>
 
     </main>
