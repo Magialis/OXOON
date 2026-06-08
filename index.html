@@ -103,7 +103,352 @@
         </section>
 
         <section id="setores-de-consumo" class="page">
-            <p>Conteúdo dos Setores de Consumo</p>
+            <div class="previsoes-card">
+                <div class="previsoes-left">
+                    <h2 class="previsoes-title">Previsões</h2>
+                    <p class="previsoes-desc">
+                        Pico de energia previsto para <strong>hoje às 17h00</strong> com demanda de
+                        <strong>5,32 MW</strong> — concentrado nos módulos de Mineração e Engenharia em carga máxima
+                        simultânea.
+                        Oxigênio atinge pico às <strong>15h00</strong> (<strong>4,65 kg/h</strong>), impulsionado pela
+                        ocupação máxima do Habitat combinada com EVA dupla em andamento. Ambos os sistemas operam dentro
+                        das
+                        margens de segurança estabelecidas pela Missão Artemis-7.
+                    </p>
+                </div>
+                <div class="previsoes-metrics">
+                    <div class="previsoes-metric">
+                        <p class="previsoes-metric__label">PICO DE CONSUMO DE ENERGIA</p>
+                        <p class="previsoes-metric__value previsoes-metric__value--energy">5.32 MW</p>
+                        <p class="previsoes-metric__time">Hoje às 17:00</p>
+                    </div>
+                    <div class="previsoes-metric">
+                        <p class="previsoes-metric__label">PICO DE CONSUMO DE OXIGÊNIO</p>
+                        <p class="previsoes-metric__value previsoes-metric__value--oxygen">4.65 kg/h</p>
+                        <p class="previsoes-metric__time">Hoje às 15:00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="setores-body">
+                <div class="mapa-wrapper" id="mapaWrapper">
+                    <div class="mapa-inner" id="mapaInner">
+                        <img class="mapa-img" src="./assets/images/mapa.png" alt="Mapa da Base Lunar OXOON"
+                            draggable="false">
+                        <div class="mapa-hotspot mapa-hotspot--convivencia">
+                            <div class="mapa-tooltip">
+                                <h3 class="mapa-tooltip__title">Centro de Convivência</h3>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-lightning"></i> Energia</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--energy">210 kW</strong>
+                                </div>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-leaf"></i> Oxigênio</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--oxygen">0.40 kg/h</strong>
+                                </div>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-person"></i> Tripulação</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--crew">16 pessoas</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mapa-hotspot mapa-hotspot--habitat">
+                            <div class="mapa-tooltip">
+                                <h3 class="mapa-tooltip__title">Habitat</h3>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-lightning"></i> Energia</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--energy">480 kW</strong>
+                                </div>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-leaf"></i> Oxigênio</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--oxygen">0.13 kg/h</strong>
+                                </div>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-person"></i> Tripulação</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--crew">12 pessoas</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mapa-hotspot mapa-hotspot--laboratorio">
+                            <div class="mapa-tooltip">
+                                <h3 class="mapa-tooltip__title">Laboratório</h3>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-lightning"></i> Energia</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--energy">620 kW</strong>
+                                </div>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-leaf"></i> Oxigênio</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--oxygen">0.98 kg/h</strong>
+                                </div>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-person"></i> Tripulação</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--crew">6 pessoas</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mapa-hotspot mapa-hotspot--agricultura">
+                            <div class="mapa-tooltip mapa-tooltip--bottom">
+                                <h3 class="mapa-tooltip__title">Agricultura</h3>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-lightning"></i> Energia</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--energy">350 kW</strong>
+                                </div>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-leaf"></i> Oxigênio</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--oxygen">-0.65 kg/h</strong>
+                                </div>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-person"></i> Tripulação</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--crew">3 pessoas</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mapa-hotspot mapa-hotspot--comando">
+                            <div class="mapa-tooltip">
+                                <h3 class="mapa-tooltip__title">Centro de Comando</h3>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-lightning"></i> Energia</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--energy">250 kW</strong>
+                                </div>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-leaf"></i> Oxigênio</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--oxygen">0.12 kg/h</strong>
+                                </div>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-person"></i> Tripulação</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--crew">5 pessoas</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mapa-hotspot mapa-hotspot--engenharia">
+                            <div class="mapa-tooltip mapa-tooltip--left">
+                                <h3 class="mapa-tooltip__title">Engenharia</h3>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-lightning"></i> Energia</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--energy">410 kW</strong>
+                                </div>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-leaf"></i> Oxigênio</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--oxygen">0.75 kg/h</strong>
+                                </div>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-person"></i> Tripulação</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--crew">8 pessoas</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mapa-hotspot mapa-hotspot--hangar">
+                            <div class="mapa-tooltip mapa-tooltip--left">
+                                <h3 class="mapa-tooltip__title">Hangar</h3>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-lightning"></i> Energia</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--energy">540 kW</strong>
+                                </div>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-leaf"></i> Oxigênio</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--oxygen">0.35 kg/h</strong>
+                                </div>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-person"></i> Tripulação</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--crew">4 pessoas</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mapa-hotspot mapa-hotspot--enfermaria">
+                            <div class="mapa-tooltip mapa-tooltip--top">
+                                <h3 class="mapa-tooltip__title">Enfermaria</h3>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-lightning"></i> Energia</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--energy">180 kW</strong>
+                                </div>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-leaf"></i> Oxigênio</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--oxygen">0.25 kg/h</strong>
+                                </div>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-person"></i> Tripulação</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--crew">2 pessoas</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mapa-hotspot mapa-hotspot--mineracao">
+                            <div class="mapa-tooltip">
+                                <h3 class="mapa-tooltip__title">Mineração</h3>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-lightning"></i> Energia</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--energy">680 kW</strong>
+                                </div>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-leaf"></i> Oxigênio</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--oxygen">1.45 kg/h</strong>
+                                </div>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-person"></i> Tripulação</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--crew">10 pessoas</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="mapa-fullscreen-btn" id="mapaFullscreenBtn" title="Expandir mapa">
+                        <i class="ph ph-arrows-out" id="mapaFullscreenIcon"></i>
+                    </button>
+                </div>
+                <div class="setores-panel">
+                    <div class="panel-card">
+                        <h3 class="panel-card__title">Lista de Setores</h3>
+                        <table class="setores-table">
+                            <thead>
+                                <tr>
+                                    <th>Setor</th>
+                                    <th>Energia</th>
+                                    <th>Oxigênio</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><i class="ph ph-house"></i> Centro de Convivência</td>
+                                    <td class="val-energy">190 kW</td>
+                                    <td class="val-oxygen">0.55 kg/h</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="ph ph-bed"></i> Habitat</td>
+                                    <td class="val-energy">380 kW</td>
+                                    <td class="val-oxygen">0.98 kg/h</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="ph ph-flask"></i> Laboratório</td>
+                                    <td class="val-energy">560 kW</td>
+                                    <td class="val-oxygen">0.42 kg/h</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="ph ph-plant"></i> Agricultura</td>
+                                    <td class="val-energy">710 kW</td>
+                                    <td class="val-oxygen">0.35 kg/h</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="ph ph-monitor"></i> Centro de Comando</td>
+                                    <td class="val-energy">490 kW</td>
+                                    <td class="val-oxygen">0.28 kg/h</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="ph ph-wrench"></i> Engenharia</td>
+                                    <td class="val-energy">780 kW</td>
+                                    <td class="val-oxygen">0.20 kg/h</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="ph ph-garage"></i> Hangar</td>
+                                    <td class="val-energy">260 kW</td>
+                                    <td class="val-oxygen">0.12 kg/h</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="ph ph-first-aid"></i> Enfermaria</td>
+                                    <td class="val-energy">310 kW</td>
+                                    <td class="val-oxygen">0.72 kg/h</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="ph ph-mountains"></i> Mineração</td>
+                                    <td class="val-energy">820 kW</td>
+                                    <td class="val-oxygen">0.18 kg/h</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="setores-total">
+                            <span class="setores-total__label">Consumo total</span>
+                            <span class="setores-total__val val-energy">4.50 MW</span>
+                            <span class="setores-total__val val-oxygen">3.80 kg/h</span>
+                        </div>
+                    </div>
+                    <div class="panel-card">
+                        <h3 class="panel-card__title">Distribuição de Consumo</h3>
+                        <div class="distribuicao-charts">
+                            <div class="consumo-card">
+                                <h4 class="donut-title">Energia</h4>
+                                <img src="./assets/images/donut-energia.png" alt="Distribuição de energia"
+                                    class="consumo-img">
+                                <div class="consumo-legenda">
+                                    <p class="consumo-legenda__item">
+                                        <span class="dot-legenda dot-legenda--1"></span>
+                                        Mineração
+                                    </p>
+                                    <p class="consumo-legenda__item">
+                                        <span class="dot-legenda dot-legenda--2"></span>
+                                        Engenharia
+                                    </p>
+                                    <p class="consumo-legenda__item">
+                                        <span class="dot-legenda dot-legenda--3"></span>
+                                        Agricultura
+                                    </p>
+                                    <p class="consumo-legenda__item">
+                                        <span class="dot-legenda dot-legenda--4"></span>
+                                        Laboratório
+                                    </p>
+                                    <p class="consumo-legenda__item">
+                                        <span class="dot-legenda dot-legenda--5"></span>
+                                        Centro de Comando
+                                    </p>
+                                    <p class="consumo-legenda__item">
+                                        <span class="dot-legenda dot-legenda--6"></span>
+                                        Habitat
+                                    </p>
+                                    <p class="consumo-legenda__item">
+                                        <span class="dot-legenda dot-legenda--7"></span>
+                                        Enfermaria
+                                    </p>
+                                    <p class="consumo-legenda__item">
+                                        <span class="dot-legenda dot-legenda--8"></span>
+                                        Hangar
+                                    </p>
+                                    <p class="consumo-legenda__item">
+                                        <span class="dot-legenda dot-legenda--9"></span>
+                                        Centro de Convivência
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="consumo-card">
+                                <h4 class="donut-title">Oxigênio</h4>
+                                <img src="./assets/images/donut-oxigenio.png" alt="Distribuição de oxigênio"
+                                    class="consumo-img">
+                                <div class="consumo-legenda">
+                                    <p class="consumo-legenda__item">
+                                        <span class="dot-legenda dot-legenda--10"></span>
+                                        Habitat
+                                    </p>
+                                    <p class="consumo-legenda__item">
+                                        <span class="dot-legenda dot-legenda--11"></span>
+                                        Enfermaria
+                                    </p>
+                                    <p class="consumo-legenda__item">
+                                        <span class="dot-legenda dot-legenda--12"></span>
+                                        Centro de Convivência
+                                    </p>
+                                    <p class="consumo-legenda__item">
+                                        <span class="dot-legenda dot-legenda--13"></span>
+                                        Laboratório
+                                    </p>
+                                    <p class="consumo-legenda__item">
+                                        <span class="dot-legenda dot-legenda--14"></span>
+                                        Agricultura
+                                    </p>
+                                    <p class="consumo-legenda__item">
+                                        <span class="dot-legenda dot-legenda--15"></span>
+                                        Centro de Comando
+                                    </p>
+                                    <p class="consumo-legenda__item">
+                                        <span class="dot-legenda dot-legenda--16"></span>
+                                        Engenharia
+                                    </p>
+                                    <p class="consumo-legenda__item">
+                                        <span class="dot-legenda dot-legenda--17"></span>
+                                        Mineração
+                                    </p>
+                                    <p class="consumo-legenda__item">
+                                        <span class="dot-legenda dot-legenda--18"></span>
+                                        Hangar
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </section>
 
         <section id="tripulacao-ativa" class="page">
