@@ -71,3 +71,9 @@ navItems.forEach(item => {
 // JS DOS RELATÓRIOS
 
 // -----------------
+
+
+
+// JS DAS CONFIGURAÇÕES
+
+// -----------------
