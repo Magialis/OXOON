@@ -576,7 +576,6 @@ main {
     border-radius: inherit;
 }
 
-/* estado hover */
 .mapa-hotspot:hover {
     background: rgba(157, 0, 255, .12);
 
@@ -665,8 +664,6 @@ main {
     left: 26.7%;
 }
 
-/* ─── Tooltip ─────────────────────────────────────────────── */
-
 .mapa-tooltip {
     position: absolute;
     bottom: calc(100% + 12px);
@@ -710,7 +707,6 @@ main {
     transform: translateY(50%);
 }
 
-/* Título */
 .mapa-tooltip__title {
     font-size: var(--fs-nav);
     font-weight: 700;
@@ -719,7 +715,6 @@ main {
     text-align: center;
 }
 
-/* Linhas de dado */
 .mapa-tooltip__row {
     display: flex;
     align-items: center;
@@ -757,14 +752,9 @@ main {
     color: #5CB85C;
 }
 
-/* verde   — oxigênio */
 .mapa-tooltip__val--crew {
     color: #9D00FF;
 }
-
-/* roxo    — tripulação */
-
-/* ─── Animação de pulso no hover ──────────────────────────── */
 
 @keyframes mapa-pulse {
     0% {
@@ -783,8 +773,6 @@ main {
     }
 }
 
-/* --- Painel lateral -------------------------------------- */
-
 .setores-panel {
     display: flex;
     flex-direction: column;
@@ -798,14 +786,19 @@ main {
     padding: 18px;
 }
 
+.panel-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(157,0,255,.35);
+    box-shadow:
+        0 0 18px rgba(157,0,255,.14);
+}
+
 .panel-card__title {
     font-family: var(--font-title);
     font-size: var(--fs-nav);
     color: var(--title-color);
     margin-bottom: 14px;
 }
-
-/* --- Tabela de setores ----------------------------------- */
 
 .setores-table {
     width: 100%;
@@ -885,8 +878,6 @@ main {
     font-weight: 700;
     font-size: var(--fs-body);
 }
-
-/* --- Gráficos de distribuição ---------------------------- */
 
 .distribuicao-charts {
     display: flex;
