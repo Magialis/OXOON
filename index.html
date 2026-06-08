@@ -84,8 +84,50 @@
             <span class="clock__timezone">UTC</span>
         </div>
         <button class="btn btn--ghost">Alertas</button>
-        <a href="#relatorios" class="btn btn--primary">+ Relatório</a>
-        <button class="avatar" aria-label="Menu do Usuário">CG</button>
+        <button class="btn btn--primary new-report-btn">+ Relatório</button>
+        <div class="user-menu">
+            <button class="user-menu__trigger">
+                <div class="user-avatar">
+                    CG
+                </div>
+                <span class="user-arrow">
+                    ▼
+                </span>
+            </button>
+            <div class="user-dropdown">
+                <div class="user-dropdown__header">
+                    <div class="user-dropdown__avatar">
+                        CG
+                    </div>
+                    <div>
+                        <span class="dropdown-name">
+                            Garcia
+                        </span>
+                        <span class="dropdown-role">
+                            Comandante da Artemis-7
+                        </span>
+                    </div>
+                </div>
+                <div class="dropdown-divider"></div>
+                <button class="dropdown-item">
+                    Perfil Operacional
+                </button>
+                <button class="dropdown-item">
+                    Preferências
+                </button>
+                <button class="dropdown-item">
+                    Logs da Sessão
+                </button>
+                <button class="dropdown-item">
+                    Central de Segurança
+                </button>
+                <div class="dropdown-divider"></div>
+                <button class="dropdown-item dropdown-item--danger">
+                    Encerrar Sessão
+                </button>
+            </div>
+        </div>
+        <!-- <button class="avatar" aria-label="Menu do Usuário">CG</button> -->
     </header>
 
     <main>
@@ -119,6 +161,126 @@
         </section>
 
     </main>
+
+    <div class="report-modal">
+
+        <div class="report-modal__overlay"></div>
+
+        <div class="report-modal__content">
+
+            <div class="report-modal__header">
+
+                <div>
+                    <h2 class="report-modal__title">
+                        Novo Relatório
+                    </h2>
+
+                    <p class="report-modal__subtitle">
+                        Registro operacional da missão Artemis-7
+                    </p>
+                </div>
+
+                <button class="report-modal__close">
+                    ✕
+                </button>
+
+            </div>
+
+            <form class="report-form">
+
+                <!-- TÍTULO -->
+                <div class="form-group">
+
+                    <label>
+                        Título
+                    </label>
+
+                    <input type="text" id="reportTitle" placeholder="Digite o título do relatório" required>
+
+                </div>
+
+                <!-- DESCRIÇÃO -->
+                <div class="form-group">
+
+                    <label>
+                        Descrição
+                    </label>
+
+                    <textarea id="reportDescription" placeholder="Descreva o registro operacional..."
+                        required></textarea>
+
+                </div>
+
+                <!-- CATEGORIA -->
+                <div class="form-group">
+
+                    <label>
+                        Categoria
+                    </label>
+
+                    <select id="reportCategory">
+
+                        <option value="energia">
+                            Energia
+                        </option>
+
+                        <option value="oxigenio">
+                            Oxigênio
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- SUBCATEGORIA -->
+                <div class="form-group">
+
+                    <label>
+                        Subcategoria
+                    </label>
+
+                    <select id="reportSubcategory">
+
+                        <option value="consumo">
+                            Consumo
+                        </option>
+
+                        <option value="producao">
+                            Produção
+                        </option>
+
+                        <option value="manutencao">
+                            Manutenção
+                        </option>
+
+                        <option value="emergencia">
+                            Emergência
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- BOTÕES -->
+                <div class="report-form__actions">
+
+                    <button type="button" class="btn btn--danger cancel-btn">
+
+                        Cancelar
+                    </button>
+
+                    <button type="submit" class="btn btn--primary create-btn">
+
+                        Criar Relatório
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
 
     <script src="./assets/js/script.js"></script>
 
