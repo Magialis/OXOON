@@ -50,7 +50,7 @@
                         <a href="#alertas">
                             Alertas
                         </a>
-                        <span class="badge">3</span>
+                        <span class="badge">6</span>
                     </li>
                     <li class="nav__item">
                         <a href="#relatorios">Relatórios</a>
@@ -84,8 +84,50 @@
             <span class="clock__timezone">UTC</span>
         </div>
         <button class="btn btn--ghost">Alertas</button>
-        <a href="#relatorios" class="btn btn--primary">+ Relatório</a>
-        <button class="avatar" aria-label="Menu do Usuário">CG</button>
+        <button class="btn btn--primary new-report-btn">+ Relatório</button>
+        <div class="user-menu">
+            <button class="user-menu__trigger">
+                <div class="user-avatar">
+                    CG
+                </div>
+                <span class="user-arrow">
+                    ▼
+                </span>
+            </button>
+            <div class="user-dropdown">
+                <div class="user-dropdown__header">
+                    <div class="user-dropdown__avatar">
+                        CG
+                    </div>
+                    <div>
+                        <span class="dropdown-name">
+                            Garcia
+                        </span>
+                        <span class="dropdown-role">
+                            Comandante da Artemis-7
+                        </span>
+                    </div>
+                </div>
+                <div class="dropdown-divider"></div>
+                <button class="dropdown-item">
+                    Perfil Operacional
+                </button>
+                <button class="dropdown-item">
+                    Preferências
+                </button>
+                <button class="dropdown-item">
+                    Logs da Sessão
+                </button>
+                <button class="dropdown-item">
+                    Central de Segurança
+                </button>
+                <div class="dropdown-divider"></div>
+                <button class="dropdown-item dropdown-item--danger">
+                    Encerrar Sessão
+                </button>
+            </div>
+        </div>
+        <!-- <button class="avatar" aria-label="Menu do Usuário">CG</button> -->
     </header>
 
     <main>
@@ -95,8 +137,337 @@
         </section>
 
         <section id="sistema-de-energia" class="page">
-            <p>Conteúdo do Sistema de Energia</p>
+
+    <div class="energy">
+
+        <!-- HERO -->
+        <section class="energy__hero">
+
+            <div class="energy__stat">
+                <span class="energy__stat-label">EFICIÊNCIA ATUAL</span>
+                <span class="energy__stat-value energy__stat-value--success">84%</span>
+                <span class="energy__stat-info">↑ 5.2% vs ontem</span>
+            </div>
+
+            <div class="energy__stat">
+                <span class="energy__stat-label">PRODUÇÃO ATUAL</span>
+                <span class="energy__stat-value energy__stat-value--secondary">4.2 MW</span>
+                <span class="energy__stat-info">Painéis solares</span>
+            </div>
+
+            <div class="energy__stat">
+                <span class="energy__stat-label">AUTONOMIA</span>
+                <span class="energy__stat-value energy__stat-value--primary">11 DIAS</span>
+                <span class="energy__stat-info">Reserva total</span>
+            </div>
+
+            <div class="energy__stat">
+                <span class="energy__stat-label">ARMAZENAMENTO</span>
+                <span class="energy__stat-value energy__stat-value--success">82%</span>
+                <span class="energy__stat-info">Baterias OK</span>
+            </div>
+
+            <div class="energy__stat">
+                <span class="energy__stat-label">ALERTAS CRÍTICOS</span>
+                <span class="energy__stat-value energy__stat-value--secondary">2</span>
+                <span class="energy__stat-info">Atenção</span>
+            </div>
+
+            <div class="energy__stat">
+                <span class="energy__stat-label">MODO EMERGÊNCIA</span>
+                <span class="energy__stat-value energy__stat-value--success">OFF</span>
+                <span class="energy__stat-info">Sistema normal</span>
+            </div>
+
         </section>
+
+        <!-- GRID SUPERIOR -->
+        <section class="energy__grid">
+
+            <!-- GERAÇÃO -->
+<article class="energy-card">
+
+    <div class="energy-card__header">
+
+        <div class="energy-card__icon energy-card__icon--lightning">
+            <i class="ph ph-lightning"></i>
+        </div>
+
+        <div>
+            <h3 class="energy-card__title">
+                Geração
+            </h3>
+
+            <span class="energy-card__subtitle">
+                Painéis solares ativos
+            </span>
+        </div>
+
+    </div>
+
+    <div class="energy-circle">
+
+        <div class="energy-circle__ring energy-circle__ring--secondary"
+            style="--progress:25;">
+
+            <span class="energy-circle__value energy-circle__value--generation">
+                4.2
+                <small>MW</small>
+            </span>
+
+        </div>
+
+        <span class="energy-circle__label">
+            Produção Atual
+        </span>
+
+    </div>
+
+    <div class="energy-card__metrics">
+
+        <div>
+            <span>Pico Diário</span>
+            <strong>5.8 MW</strong>
+        </div>
+
+        <div>
+            <span>Média 24h</span>
+            <strong>3.9 MW</strong>
+        </div>
+
+        <div>
+            <span>Mínimo Noturno</span>
+            <strong>1.2 MW</strong>
+        </div>
+
+    </div>
+
+</article>
+
+<!-- ARMAZENAMENTO -->
+<article class="energy-card">
+
+    <div class="energy-card__header">
+
+        <div class="energy-card__icon energy-card__icon--success">
+            <i class="ph ph-battery-charging"></i>
+        </div>
+
+        <div>
+            <h3 class="energy-card__title">
+                Armazenamento
+            </h3>
+
+            <span class="energy-card__subtitle">
+                Bancos de bateria
+            </span>
+        </div>
+
+    </div>
+
+    <div class="energy-circle">
+
+        <div class="energy-circle__ring energy-circle__ring--success"
+            style="--progress:75;">
+
+            <span class="energy-circle__value energy-circle__value--storage">
+                75%
+            </span>
+
+        </div>
+
+        <span class="energy-circle__label">
+            Capacidade
+        </span>
+
+    </div>
+
+    <div class="energy-progress">
+
+        <span>Banco A (Principal)</span>
+
+        <div class="energy-progress__bar">
+            <div class="energy-progress__fill energy-progress__fill--success"
+                style="width:90%">
+            </div>
+        </div>
+
+        <span>90%</span>
+
+    </div>
+
+    <div class="energy-progress">
+
+        <span>Banco B (Backup)</span>
+
+        <div class="energy-progress__bar">
+            <div class="energy-progress__fill energy-progress__fill--success"
+                style="width:78%">
+            </div>
+        </div>
+
+        <span>78%</span>
+
+    </div>
+
+</article>
+
+            <!-- DISTRIBUIÇÃO -->
+            <article class="energy-card">
+
+                <div class="energy-card__header">
+
+                    <div class="energy-card__icon energy-card__icon--primary">
+                        <i class="ph ph-share-network"></i>
+                    </div>
+
+                    <div>
+                        <h3 class="energy-card__title">
+                            Distribuição
+                        </h3>
+
+                        <span class="energy-card__subtitle">
+                            Consumo por setor
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="distribution-list">
+
+                    <div class="distribution-item">
+                        <span>Habitat</span>
+                        <span>28%</span>
+                    </div>
+                    <div class="distribution-progress__bar">
+                        <div class="energy-progress__fill distribution__fill--habitat"
+                            style="width:28%">
+                        </div>
+                    </div>
+
+                    <div class="distribution-item">
+                        <span>Agricultura</span>
+                        <span>22%</span>
+                    </div>
+
+                    <div class="distribution-progress__bar">
+                        <div class="energy-progress__fill distribution__fill--agriculture"
+                            style="width:22%">
+                        </div>
+                    </div>
+
+                    <div class="distribution-item">
+                        <span>Laboratório</span>
+                        <span>18%</span>
+                    </div>
+
+                    <div class="distribution-progress__bar">
+                        <div class="energy-progress__fill distribution__fill--laboratory"
+                            style="width:18%">
+                        </div>
+                    </div>
+
+                    <div class="distribution-item">
+                        <span>Comando</span>
+                        <span>15%</span>
+                    </div>
+
+                    <div class="distribution-progress__bar">
+                        <div class="energy-progress__fill distribution__fill--command"
+                            style="width:15%">
+                        </div>
+                    </div>
+
+                    <div class="distribution-item">
+                        <span>Outros</span>
+                        <span>17%</span>
+                    </div>
+
+                    <div class="distribution-progress__bar">
+                        <div class="energy-progress__fill distribution__fill--others"
+                            style="width:17%">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="distribution-total">
+                    <span>Consumo Total</span>
+                    <strong>4.12 kWh</strong>
+                </div>
+
+            </article>
+
+        </section>
+
+        <!-- GRID INFERIOR -->
+
+        <section class="energy__bottom">
+
+            <article class="sidebar-panel">
+
+                <div class="sidebar-panel__header">
+                    <h2 class="sidebar-panel__title">
+                        Alertas e Riscos
+                    </h2>
+                </div>
+
+                <div class="alert-list">
+
+                    <div class="alert-card alert-card--danger">
+                        <span>Painel em manutenção</span>
+                        <span class="alert-tag--danger">ALTA</span>
+                    </div>
+
+                    <div class="alert-card alert-card--warning">
+                        <span>Eficiência reduzida</span>
+                        <span class="alert-tag--warning">MÉDIA</span>
+                    </div>
+
+                    <div class="alert-card alert-card--info">
+                        <span>Previsão climática</span>
+                        <span class="alert-tag--info">INFO</span>
+                    </div>
+
+                </div>
+
+            </article>
+
+            <article class="sidebar-panel">
+
+                <div class="sidebar-panel__header">
+                    <h2 class="sidebar-panel__title">
+                        Manutenção Operacional
+                    </h2>
+                    <p>Equipamentos e agendamentos</p>
+                </div>
+
+                <div class="maintenance-list">
+
+                    <div class="maintenance-card">
+                        <span>Painel Solar A-2</span>
+                        <span>EM ANDAMENTO</span>
+                    </div>
+
+                    <div class="maintenance-card">
+                        <span>Inversor FL-1</span>
+                        <span>AGENDADO</span>
+                    </div>
+                    
+                    <div class="responsible-info">
+                        <p>Responsável: Engenheiro Santos</p>
+                        <span>Início: 18:00</span>
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+    </div>
+
+</section>
 
         <section id="sistema-de-oxigenio" class="page">
             <!-- Conteúdo do Sistema de Oxigênio -->
@@ -578,7 +949,352 @@
             </section>
 
         <section id="setores-de-consumo" class="page">
-            <p>Conteúdo dos Setores de Consumo</p>
+            <div class="previsoes-card">
+                <div class="previsoes-left">
+                    <h2 class="previsoes-title">Previsões</h2>
+                    <p class="previsoes-desc">
+                        Pico de energia previsto para <strong>hoje às 17h00</strong> com demanda de
+                        <strong>5,32 MW</strong> — concentrado nos módulos de Mineração e Engenharia em carga máxima
+                        simultânea.
+                        Oxigênio atinge pico às <strong>15h00</strong> (<strong>4,65 kg/h</strong>), impulsionado pela
+                        ocupação máxima do Habitat combinada com EVA dupla em andamento. Ambos os sistemas operam dentro
+                        das
+                        margens de segurança estabelecidas pela Missão Artemis-7.
+                    </p>
+                </div>
+                <div class="previsoes-metrics">
+                    <div class="previsoes-metric">
+                        <p class="previsoes-metric__label">PICO DE CONSUMO DE ENERGIA</p>
+                        <p class="previsoes-metric__value previsoes-metric__value--energy">5.32 MW</p>
+                        <p class="previsoes-metric__time">Hoje às 17:00</p>
+                    </div>
+                    <div class="previsoes-metric">
+                        <p class="previsoes-metric__label">PICO DE CONSUMO DE OXIGÊNIO</p>
+                        <p class="previsoes-metric__value previsoes-metric__value--oxygen">4.65 kg/h</p>
+                        <p class="previsoes-metric__time">Hoje às 15:00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="setores-body">
+                <div class="mapa-wrapper" id="mapaWrapper">
+                    <div class="mapa-inner" id="mapaInner">
+                        <img class="mapa-img" src="./assets/images/mapa.png" alt="Mapa da Base Lunar OXOON"
+                            draggable="false">
+                        <div class="mapa-hotspot mapa-hotspot--convivencia">
+                            <div class="mapa-tooltip">
+                                <h3 class="mapa-tooltip__title">Centro de Convivência</h3>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-lightning"></i> Energia</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--energy">210 kW</strong>
+                                </div>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-leaf"></i> Oxigênio</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--oxygen">0.40 kg/h</strong>
+                                </div>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-person"></i> Tripulação</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--crew">16 pessoas</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mapa-hotspot mapa-hotspot--habitat">
+                            <div class="mapa-tooltip">
+                                <h3 class="mapa-tooltip__title">Habitat</h3>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-lightning"></i> Energia</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--energy">480 kW</strong>
+                                </div>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-leaf"></i> Oxigênio</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--oxygen">0.13 kg/h</strong>
+                                </div>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-person"></i> Tripulação</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--crew">12 pessoas</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mapa-hotspot mapa-hotspot--laboratorio">
+                            <div class="mapa-tooltip">
+                                <h3 class="mapa-tooltip__title">Laboratório</h3>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-lightning"></i> Energia</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--energy">620 kW</strong>
+                                </div>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-leaf"></i> Oxigênio</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--oxygen">0.98 kg/h</strong>
+                                </div>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-person"></i> Tripulação</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--crew">6 pessoas</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mapa-hotspot mapa-hotspot--agricultura">
+                            <div class="mapa-tooltip mapa-tooltip--bottom">
+                                <h3 class="mapa-tooltip__title">Agricultura</h3>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-lightning"></i> Energia</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--energy">350 kW</strong>
+                                </div>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-leaf"></i> Oxigênio</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--oxygen">-0.65 kg/h</strong>
+                                </div>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-person"></i> Tripulação</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--crew">3 pessoas</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mapa-hotspot mapa-hotspot--comando">
+                            <div class="mapa-tooltip">
+                                <h3 class="mapa-tooltip__title">Centro de Comando</h3>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-lightning"></i> Energia</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--energy">250 kW</strong>
+                                </div>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-leaf"></i> Oxigênio</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--oxygen">0.12 kg/h</strong>
+                                </div>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-person"></i> Tripulação</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--crew">5 pessoas</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mapa-hotspot mapa-hotspot--engenharia">
+                            <div class="mapa-tooltip mapa-tooltip--left">
+                                <h3 class="mapa-tooltip__title">Engenharia</h3>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-lightning"></i> Energia</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--energy">410 kW</strong>
+                                </div>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-leaf"></i> Oxigênio</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--oxygen">0.75 kg/h</strong>
+                                </div>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-person"></i> Tripulação</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--crew">8 pessoas</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mapa-hotspot mapa-hotspot--hangar">
+                            <div class="mapa-tooltip mapa-tooltip--left">
+                                <h3 class="mapa-tooltip__title">Hangar</h3>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-lightning"></i> Energia</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--energy">540 kW</strong>
+                                </div>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-leaf"></i> Oxigênio</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--oxygen">0.35 kg/h</strong>
+                                </div>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-person"></i> Tripulação</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--crew">4 pessoas</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mapa-hotspot mapa-hotspot--enfermaria">
+                            <div class="mapa-tooltip mapa-tooltip--top">
+                                <h3 class="mapa-tooltip__title">Enfermaria</h3>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-lightning"></i> Energia</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--energy">180 kW</strong>
+                                </div>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-leaf"></i> Oxigênio</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--oxygen">0.25 kg/h</strong>
+                                </div>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-person"></i> Tripulação</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--crew">2 pessoas</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mapa-hotspot mapa-hotspot--mineracao">
+                            <div class="mapa-tooltip">
+                                <h3 class="mapa-tooltip__title">Mineração</h3>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-lightning"></i> Energia</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--energy">680 kW</strong>
+                                </div>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-leaf"></i> Oxigênio</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--oxygen">1.45 kg/h</strong>
+                                </div>
+                                <div class="mapa-tooltip__row">
+                                    <p class="mapa-tooltip__label"><i class="ph ph-person"></i> Tripulação</p>
+                                    <strong class="mapa-tooltip__val mapa-tooltip__val--crew">10 pessoas</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="mapa-fullscreen-btn" id="mapaFullscreenBtn" title="Expandir mapa">
+                        <i class="ph ph-arrows-out" id="mapaFullscreenIcon"></i>
+                    </button>
+                </div>
+                <div class="setores-panel">
+                    <div class="panel-card">
+                        <h3 class="panel-card__title">Lista de Setores</h3>
+                        <table class="setores-table">
+                            <thead>
+                                <tr>
+                                    <th>Setor</th>
+                                    <th>Energia</th>
+                                    <th>Oxigênio</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><i class="ph ph-house"></i> Centro de Convivência</td>
+                                    <td class="val-energy">190 kW</td>
+                                    <td class="val-oxygen">0.55 kg/h</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="ph ph-bed"></i> Habitat</td>
+                                    <td class="val-energy">380 kW</td>
+                                    <td class="val-oxygen">0.98 kg/h</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="ph ph-flask"></i> Laboratório</td>
+                                    <td class="val-energy">560 kW</td>
+                                    <td class="val-oxygen">0.42 kg/h</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="ph ph-plant"></i> Agricultura</td>
+                                    <td class="val-energy">710 kW</td>
+                                    <td class="val-oxygen">0.35 kg/h</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="ph ph-monitor"></i> Centro de Comando</td>
+                                    <td class="val-energy">490 kW</td>
+                                    <td class="val-oxygen">0.28 kg/h</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="ph ph-wrench"></i> Engenharia</td>
+                                    <td class="val-energy">780 kW</td>
+                                    <td class="val-oxygen">0.20 kg/h</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="ph ph-garage"></i> Hangar</td>
+                                    <td class="val-energy">260 kW</td>
+                                    <td class="val-oxygen">0.12 kg/h</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="ph ph-first-aid"></i> Enfermaria</td>
+                                    <td class="val-energy">310 kW</td>
+                                    <td class="val-oxygen">0.72 kg/h</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="ph ph-mountains"></i> Mineração</td>
+                                    <td class="val-energy">820 kW</td>
+                                    <td class="val-oxygen">0.18 kg/h</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="setores-total">
+                            <span class="setores-total__label">Consumo total</span>
+                            <span class="setores-total__val val-energy">4.50 MW</span>
+                            <span class="setores-total__val val-oxygen">3.80 kg/h</span>
+                        </div>
+                    </div>
+                    <div class="panel-card">
+                        <h3 class="panel-card__title">Distribuição de Consumo</h3>
+                        <div class="distribuicao-charts">
+                            <div class="consumo-card">
+                                <h4 class="donut-title">Energia</h4>
+                                <img src="./assets/images/donut-energia.png" alt="Distribuição de energia"
+                                    class="consumo-img">
+                                <div class="consumo-legenda">
+                                    <p class="consumo-legenda__item">
+                                        <span class="dot-legenda dot-legenda--1"></span>
+                                        Mineração
+                                    </p>
+                                    <p class="consumo-legenda__item">
+                                        <span class="dot-legenda dot-legenda--2"></span>
+                                        Engenharia
+                                    </p>
+                                    <p class="consumo-legenda__item">
+                                        <span class="dot-legenda dot-legenda--3"></span>
+                                        Agricultura
+                                    </p>
+                                    <p class="consumo-legenda__item">
+                                        <span class="dot-legenda dot-legenda--4"></span>
+                                        Laboratório
+                                    </p>
+                                    <p class="consumo-legenda__item">
+                                        <span class="dot-legenda dot-legenda--5"></span>
+                                        Centro de Comando
+                                    </p>
+                                    <p class="consumo-legenda__item">
+                                        <span class="dot-legenda dot-legenda--6"></span>
+                                        Habitat
+                                    </p>
+                                    <p class="consumo-legenda__item">
+                                        <span class="dot-legenda dot-legenda--7"></span>
+                                        Enfermaria
+                                    </p>
+                                    <p class="consumo-legenda__item">
+                                        <span class="dot-legenda dot-legenda--8"></span>
+                                        Hangar
+                                    </p>
+                                    <p class="consumo-legenda__item">
+                                        <span class="dot-legenda dot-legenda--9"></span>
+                                        Centro de Convivência
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="consumo-card">
+                                <h4 class="donut-title">Oxigênio</h4>
+                                <img src="./assets/images/donut-oxigenio.png" alt="Distribuição de oxigênio"
+                                    class="consumo-img">
+                                <div class="consumo-legenda">
+                                    <p class="consumo-legenda__item">
+                                        <span class="dot-legenda dot-legenda--10"></span>
+                                        Habitat
+                                    </p>
+                                    <p class="consumo-legenda__item">
+                                        <span class="dot-legenda dot-legenda--11"></span>
+                                        Enfermaria
+                                    </p>
+                                    <p class="consumo-legenda__item">
+                                        <span class="dot-legenda dot-legenda--12"></span>
+                                        Centro de Convivência
+                                    </p>
+                                    <p class="consumo-legenda__item">
+                                        <span class="dot-legenda dot-legenda--13"></span>
+                                        Laboratório
+                                    </p>
+                                    <p class="consumo-legenda__item">
+                                        <span class="dot-legenda dot-legenda--14"></span>
+                                        Agricultura
+                                    </p>
+                                    <p class="consumo-legenda__item">
+                                        <span class="dot-legenda dot-legenda--15"></span>
+                                        Centro de Comando
+                                    </p>
+                                    <p class="consumo-legenda__item">
+                                        <span class="dot-legenda dot-legenda--16"></span>
+                                        Engenharia
+                                    </p>
+                                    <p class="consumo-legenda__item">
+                                        <span class="dot-legenda dot-legenda--17"></span>
+                                        Mineração
+                                    </p>
+                                    <p class="consumo-legenda__item">
+                                        <span class="dot-legenda dot-legenda--18"></span>
+                                        Hangar
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </section>
 
         <section id="tripulacao-ativa" class="page">
@@ -586,17 +1302,1043 @@
         </section>
 
         <section id="alertas" class="page">
-            <p>Conteúdo dos Alertas</p>
+
+            <section class="hero-card">
+                <div class="hero-card__content">
+                    <h3 class="hero-card__title">Central de Alertas</h3>
+                    <p class="hero-card__description">
+                        Todos os alertas do sistema ordenados por prioridade e tempo.
+                    </p>
+                </div>
+
+                <div class="hero-card__status-list">
+                    <div class="hero-card__status-item">
+                        <h2 class="hero-card__status-value">01</h2>
+                        <span class="hero-card__status-label">CRÍTICO</span>
+                    </div>
+                    <div class="hero-card__status-item">
+                        <h2 class="hero-card__status-value">03</h2>
+                        <span class="hero-card__status-label">ATENÇÃO</span>
+                    </div>
+                    <div class="hero-card__status-item">
+                        <h2 class="hero-card__status-value">02</h2>
+                        <span class="hero-card__status-label">RESOLVIDO</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="alertas-page">
+
+                <div class="alertas-page__grid">
+
+                    <div class="alerta-card alerta-card--critica">
+                        <div class="alerta-card__status">CRÍTICO</div>
+                        <img src="./assets/images/alert icon.png" alt="Ícone de Alerta" class="alerta-card__icone">
+                        <h3 class="alerta-card__title">RESERVA ALIMENTAR BAIXA</h3>
+                        <p class="alerta-card__description">
+                            Nível em 23%. Solicitar reabastecimento ou ativar protocolo de racionamento. Previsão de
+                            esgotamento: 18 dias.
+                        </p>
+                    </div>
+
+                    <div class="alerta-card alerta-card--atencao">
+                        <div class="alerta-card__status">ATENÇÃO</div>
+                        <img src="./assets/images/alert icon.png" alt="Ícone de Atenção" class="alerta-card__icone">
+                        <h3 class="alerta-card__title">ÁGUA ABAIXO DO IDEAL - MÓDULO B-3</h3>
+                        <p class="alerta-card__description">
+                            Sistema de reciclagem com eficiência reduzida (67%).
+                            Verificar filtros e sensores.
+                        </p>
+                    </div>
+
+                    <div class="alerta-card alerta-card--resolvido">
+                        <div class="alerta-card__status">RESOLVIDO</div>
+                        <img src="./assets/images/safe icon.png" alt="Ícone de Sucesso" class="alerta-card__icone">
+                        <h3 class="alerta-card__title">PAINEL SOLAR A-2 OFFLINE</h3>
+                        <p class="alerta-card__description">
+                            Manutenção programada em andamento. Retorno estimado: 04:30 UTC.
+                        </p>
+                    </div>
+
+                    <div class="alerta-card alerta-card--atencao">
+                        <div class="alerta-card__status">ATENÇÃO</div>
+                        <img src="./assets/images/alert icon.png" alt="Ícone de Atenção" class="alerta-card__icone">
+                        <h3 class="alerta-card__title">GERAÇÃO SOLAR ABAIXO DO IDEAL</h3>
+                        <p class="alerta-card__description">
+                            Captação fotovoltaica operando com eficiência reduzida (61%). Verificar acúmulo de regolito
+                            nos painéis e alinhamento orbital.
+                        </p>
+                    </div>
+
+                    <div class="alerta-card alerta-card--resolvido">
+                        <div class="alerta-card__status">RESOLVIDO</div>
+                        <img src="./assets/images/safe icon.png" alt="Ícone de Sucesso" class="alerta-card__icone">
+                        <h3 class="alerta-card__title">NÍVEL DE OXIGÊNIO ESTABILIZADO</h3>
+                        <p class="alerta-card__description">
+                            Sistema de suporte à vida restabelecido com eficiência nominal (100%). Fluxo de oxigênio
+                            normalizado e reserva estratégica reabastecida.
+                        </p>
+                    </div>
+
+                    <div class="alerta-card alerta-card--atencao">
+                        <div class="alerta-card__status">ATENÇÃO</div>
+                        <img src="./assets/images/alert icon.png" alt="Ícone de Atenção" class="alerta-card__icone">
+                        <h3 class="alerta-card__title">RESERVA DE OXIGÊNIO EM FAIXA CRÍTICA</h3>
+                        <p class="alerta-card__description">
+                            Nível em 24%. Solicitar redistribuição entre módulos habitáveis. Previsão de autonomia
+                            operacional: 19 horas.
+                        </p>
+                    </div>
+                </div>
+
+                <aside class="lista-alertas">
+                    <h3 class="lista-alertas__title">Lista de Alertas</h3>
+                    <ul class="lista-alertas__items">
+                        <li class="lista-alertas__item">
+                            Reserva alimentar crítica
+                            <span class="lista-alertas__tag lista-alertas__tag--critico">PENDENTE</span>
+                        </li>
+                        <li class="lista-alertas__item">
+                            Água abaixo do ideal
+                            <span class="lista-alertas__tag lista-alertas__tag--pendente">PENDENTE</span>
+                        </li>
+                        <li class="lista-alertas__item">
+                            Painel solar A-2 offline
+                            <span class="lista-alertas__tag lista-alertas__tag--resolvido">RESOLVIDO</span>
+                        </li>
+                        <li class="lista-alertas__item">
+                            Geração solar abaixo do ideal
+                            <span class="lista-alertas__tag lista-alertas__tag--pendente">PENDENTE</span>
+                        </li>
+                        <li class="lista-alertas__item">
+                            Nível de oxigênio estabilizado
+                            <span class="lista-alertas__tag lista-alertas__tag--resolvido">RESOLVIDO</span>
+                        </li>
+                        <li class="lista-alertas__item">
+                            Reserva de oxigênio crítica
+                            <span class="lista-alertas__tag lista-alertas__tag--pendente">PENDENTE</span>
+                        </li>
+                    </ul>
+                    <div class="lista-alertas__totalizer">
+                        TOTAL DE ALERTAS
+                        <span class="lista-alertas__totalizer-value">06</span>
+                    </div>
+                </aside>
+            </section>
         </section>
 
         <section id="relatorios" class="page">
-            <p>Conteúdo dos Relatórios</p>
+            <section class="reports-section">
+
+                <!-- BARRA INFORMATIVA -->
+                <div class="reports-banner">
+                    <div class="reports-banner__info">
+                        <h2 class="reports-banner__title">
+                            Central de Relatórios
+                        </h2>
+
+                        <p class="reports-banner__text">
+                            Logs operacionais e registros técnicos da missão Artemis-7.
+                        </p>
+                    </div>
+
+                    <div class="reports-banner__stats">
+                        <div class="report-stat">
+                            <span class="report-stat__value">18</span>
+                            <span class="report-stat__label">TOTAL</span>
+                        </div>
+
+                        <div class="report-stat">
+                            <span class="report-stat__value report-stat__value--energy">
+                                09
+                            </span>
+                            <span class="report-stat__label">ENERGIA</span>
+                        </div>
+
+                        <div class="report-stat">
+                            <span class="report-stat__value report-stat__value--oxygen">
+                                09
+                            </span>
+                            <span class="report-stat__label">OXIGÊNIO</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FILTROS -->
+                <div class="reports-filters">
+
+                    <div class="filters-row">
+                        <button class="filter-btn active" data-filter="all">
+                            Todas
+                        </button>
+
+                        <button class="filter-btn" data-filter="energia">
+                            Energia
+                        </button>
+
+                        <button class="filter-btn" data-filter="oxigenio">
+                            Oxigênio
+                        </button>
+                    </div>
+
+                    <div class="filters-row">
+                        <button class="filter-btn subfilter" data-subfilter="all">
+                            Todos
+                        </button>
+
+                        <button class="filter-btn subfilter" data-subfilter="consumo">
+                            Consumo
+                        </button>
+
+                        <button class="filter-btn subfilter" data-subfilter="producao">
+                            Produção
+                        </button>
+
+                        <button class="filter-btn subfilter" data-subfilter="manutencao">
+                            Manutenção
+                        </button>
+
+                        <button class="filter-btn subfilter" data-subfilter="emergencia">
+                            Emergência
+                        </button>
+                    </div>
+                </div>
+
+                <!-- GRID -->
+                <div class="reports-grid">
+
+                    <!-- CARD -->
+                    <article class="report-card" data-category="energia" data-subcategory="manutencao">
+
+                        <div class="report-card__tags">
+                            <span class="tag tag--energy">
+                                Energia
+                            </span>
+
+                            <span class="tag tag--maintenance">
+                                Manutenção
+                            </span>
+                        </div>
+
+                        <h3 class="report-card__title">
+                            Reunião Técnica dos Painéis Solares
+                        </h3>
+
+                        <p class="report-card__text">
+                            Equipe de engenharia definiu cronograma
+                            semanal para limpeza preventiva dos módulos
+                            fotovoltaicos externos.
+                        </p>
+
+                        <span class="report-card__date">
+                            MJD 60842.605
+                        </span>
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="report-card" data-category="energia" data-subcategory="manutencao">
+
+                        <div class="report-card__tags">
+                            <span class="tag tag--energy">
+                                Energia
+                            </span>
+
+                            <span class="tag tag--maintenance">
+                                Manutenção
+                            </span>
+                        </div>
+
+                        <h3 class="report-card__title">
+                            Ata da Revisão dos Conversores
+                        </h3>
+
+                        <p class="report-card__text">
+                            Equipe técnica aprovou recalibração preventiva
+                            dos conversores do setor de engenharia.
+                        </p>
+
+                        <span class="report-card__date">
+                            MJD 60842.441
+                        </span>
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="report-card" data-category="energia" data-subcategory="emergencia">
+
+                        <div class="report-card__tags">
+                            <span class="tag tag--energy">
+                                Energia
+                            </span>
+
+                            <span class="tag tag--danger">
+                                Emergência
+                            </span>
+                        </div>
+
+                        <h3 class="report-card__title">
+                            Ata da Oscilação Energética
+                        </h3>
+
+                        <p class="report-card__text">
+                            Conselho técnico autorizou ativação dos
+                            geradores auxiliares após instabilidade
+                            registrada no setor de mineração.
+                        </p>
+
+                        <span class="report-card__date">
+                            MJD 60842.284
+                        </span>
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="report-card" data-category="oxigenio" data-subcategory="producao">
+
+                        <div class="report-card__tags">
+                            <span class="tag tag--oxygen">
+                                Oxigênio
+                            </span>
+
+                            <span class="tag tag--production">
+                                Produção
+                            </span>
+                        </div>
+
+                        <h3 class="report-card__title">
+                            Registro da Bioestação Norte
+                        </h3>
+
+                        <p class="report-card__text">
+                            Culturas hidropônicas mantiveram estabilidade
+                            de produção durante o último ciclo lunar.
+                        </p>
+
+                        <span class="report-card__date">
+                            MJD 60842.118
+                        </span>
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="report-card" data-category="energia" data-subcategory="consumo">
+
+                        <div class="report-card__tags">
+                            <span class="tag tag--energy">
+                                Energia
+                            </span>
+
+                            <span class="tag tag--consumption">
+                                Consumo
+                            </span>
+                        </div>
+
+                        <h3 class="report-card__title">
+                            Relatório do Setor de Mineração
+                        </h3>
+
+                        <p class="report-card__text">
+                            Consumo energético permaneceu acima da média
+                            operacional durante perfuração profunda.
+                        </p>
+
+                        <span class="report-card__date">
+                            MJD 60841.903
+                        </span>
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="report-card" data-category="oxigenio" data-subcategory="emergencia">
+
+                        <div class="report-card__tags">
+                            <span class="tag tag--oxygen">
+                                Oxigênio
+                            </span>
+
+                            <span class="tag tag--danger">
+                                Emergência
+                            </span>
+                        </div>
+
+                        <h3 class="report-card__title">
+                            Reunião de Contenção Atmosférica
+                        </h3>
+
+                        <p class="report-card__text">
+                            Equipe operacional iniciou protocolo de
+                            isolamento preventivo após queda parcial
+                            na pressão do módulo B-2.
+                        </p>
+
+                        <span class="report-card__date">
+                            MJD 60841.744
+                        </span>
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="report-card" data-category="oxigenio" data-subcategory="manutencao">
+
+                        <div class="report-card__tags">
+                            <span class="tag tag--oxygen">
+                                Oxigênio
+                            </span>
+
+                            <span class="tag tag--maintenance">
+                                Manutenção
+                            </span>
+                        </div>
+
+                        <h3 class="report-card__title">
+                            Revisão do Sistema Atmosférico
+                        </h3>
+
+                        <p class="report-card__text">
+                            Técnicos concluíram inspeção completa nos
+                            filtros centrais do habitat principal.
+                        </p>
+
+                        <span class="report-card__date">
+                            MJD 60841.557
+                        </span>
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="report-card" data-category="oxigenio" data-subcategory="consumo">
+
+                        <div class="report-card__tags">
+                            <span class="tag tag--oxygen">
+                                Oxigênio
+                            </span>
+
+                            <span class="tag tag--consumption">
+                                Consumo
+                            </span>
+                        </div>
+
+                        <h3 class="report-card__title">
+                            Ata de Consumo Habitacional
+                        </h3>
+
+                        <p class="report-card__text">
+                            Registrado aumento de utilização no módulo
+                            habitacional após expansão da tripulação ativa.
+                        </p>
+
+                        <span class="report-card__date">
+                            MJD 60841.382
+                        </span>
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="report-card" data-category="energia" data-subcategory="emergencia">
+
+                        <div class="report-card__tags">
+                            <span class="tag tag--energy">
+                                Energia
+                            </span>
+
+                            <span class="tag tag--danger">
+                                Emergência
+                            </span>
+                        </div>
+
+                        <h3 class="report-card__title">
+                            Relatório da Sobrecarga Central
+                        </h3>
+
+                        <p class="report-card__text">
+                            Pico de consumo forçou redistribuição
+                            temporária da rede elétrica principal
+                            durante operações externas.
+                        </p>
+
+                        <span class="report-card__date">
+                            MJD 60840.982
+                        </span>
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="report-card" data-category="energia" data-subcategory="producao">
+
+                        <div class="report-card__tags">
+                            <span class="tag tag--energy">
+                                Energia
+                            </span>
+
+                            <span class="tag tag--production">
+                                Produção
+                            </span>
+                        </div>
+
+                        <h3 class="report-card__title">
+                            Reunião de Eficiência Solar
+                        </h3>
+
+                        <p class="report-card__text">
+                            Conselho técnico aprovou expansão dos painéis
+                            auxiliares do módulo orbital externo.
+                        </p>
+
+                        <span class="report-card__date">
+                            MJD 60840.772
+                        </span>
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="report-card" data-category="energia" data-subcategory="producao">
+
+                        <div class="report-card__tags">
+                            <span class="tag tag--energy">
+                                Energia
+                            </span>
+
+                            <span class="tag tag--production">
+                                Produção
+                            </span>
+                        </div>
+
+                        <h3 class="report-card__title">
+                            Relatório de Eficiência Energética
+                        </h3>
+
+                        <p class="report-card__text">
+                            Produção solar apresentou estabilidade
+                            operacional durante o último ciclo orbital lunar.
+                        </p>
+
+                        <span class="report-card__date">
+                            MJD 60840.739
+                        </span>
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="report-card" data-category="energia" data-subcategory="consumo">
+
+                        <div class="report-card__tags">
+                            <span class="tag tag--energy">
+                                Energia
+                            </span>
+
+                            <span class="tag tag--consumption">
+                                Consumo
+                            </span>
+                        </div>
+
+                        <h3 class="report-card__title">
+                            Análise de Demanda da Mineração
+                        </h3>
+
+                        <p class="report-card__text">
+                            Setor de mineração manteve consumo acima da
+                            média prevista durante operações noturnas.
+                        </p>
+
+                        <span class="report-card__date">
+                            MJD 60840.464
+                        </span>
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="report-card" data-category="oxigenio" data-subcategory="consumo">
+
+                        <div class="report-card__tags">
+                            <span class="tag tag--oxygen">
+                                Oxigênio
+                            </span>
+
+                            <span class="tag tag--consumption">
+                                Consumo
+                            </span>
+                        </div>
+
+                        <h3 class="report-card__title">
+                            Ata do Setor Habitacional
+                        </h3>
+
+                        <p class="report-card__text">
+                            Tripulação registrou aumento temporário de
+                            consumo após ativação do módulo B-3.
+                        </p>
+
+                        <span class="report-card__date">
+                            MJD 60840.331
+                        </span>
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="report-card" data-category="oxigenio" data-subcategory="emergencia">
+
+                        <div class="report-card__tags">
+                            <span class="tag tag--oxygen">
+                                Oxigênio
+                            </span>
+
+                            <span class="tag tag--danger">
+                                Emergência
+                            </span>
+                        </div>
+
+                        <h3 class="report-card__title">
+                            Registro de Vazamento Secundário
+                        </h3>
+
+                        <p class="report-card__text">
+                            Técnicos concluíram selagem emergencial
+                            de microfissura detectada no corredor
+                            de acesso ao laboratório orbital.
+                        </p>
+
+                        <span class="report-card__date">
+                            MJD 60840.118
+                        </span>
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="report-card" data-category="energia" data-subcategory="manutencao">
+
+                        <div class="report-card__tags">
+                            <span class="tag tag--energy">
+                                Energia
+                            </span>
+
+                            <span class="tag tag--maintenance">
+                                Manutenção
+                            </span>
+                        </div>
+
+                        <h3 class="report-card__title">
+                            Relatório da Central Elétrica
+                        </h3>
+
+                        <p class="report-card__text">
+                            Procedimentos de redundância energética foram
+                            atualizados pela equipe operacional.
+                        </p>
+
+                        <span class="report-card__date">
+                            MJD 60839.992
+                        </span>
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="report-card" data-category="oxigenio" data-subcategory="manutencao">
+
+                        <div class="report-card__tags">
+                            <span class="tag tag--oxygen">
+                                Oxigênio
+                            </span>
+
+                            <span class="tag tag--maintenance">
+                                Manutenção
+                            </span>
+                        </div>
+
+                        <h3 class="report-card__title">
+                            Revisão dos Filtros Atmosféricos
+                        </h3>
+
+                        <p class="report-card__text">
+                            Equipe técnica aprovou substituição preventiva
+                            dos filtros centrais do setor habitacional.
+                        </p>
+
+                        <span class="report-card__date">
+                            MJD 60839.929
+                        </span>
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="report-card" data-category="oxigenio" data-subcategory="producao">
+
+                        <div class="report-card__tags">
+                            <span class="tag tag--oxygen">
+                                Oxigênio
+                            </span>
+
+                            <span class="tag tag--production">
+                                Produção
+                            </span>
+                        </div>
+
+                        <h3 class="report-card__title">
+                            Relatório Agrícola Semanal
+                        </h3>
+
+                        <p class="report-card__text">
+                            Produção biológica de oxigênio permaneceu
+                            estável nas estufas hidropônicas centrais.
+                        </p>
+
+                        <span class="report-card__date">
+                            MJD 60839.615
+                        </span>
+                    </article>
+
+                    <!-- CARD -->
+                    <article class="report-card" data-category="oxigenio" data-subcategory="producao">
+
+                        <div class="report-card__tags">
+                            <span class="tag tag--oxygen">
+                                Oxigênio
+                            </span>
+
+                            <span class="tag tag--production">
+                                Produção
+                            </span>
+                        </div>
+
+                        <h3 class="report-card__title">
+                            Registro da Bioestação Agrícola
+                        </h3>
+
+                        <p class="report-card__text">
+                            Produção de oxigênio pelas culturas hidropônicas
+                            permaneceu dentro da margem ideal.
+                        </p>
+
+                        <span class="report-card__date">
+                            MJD 60837.778
+                        </span>
+                    </article>
+                </div>
+
+            </section>
+        </section>
+
+        <section id="configuracoes" class="page">
+            <section class="settings-section">
+
+                <!-- BANNER -->
+                <div class="settings-banner">
+
+                    <div class="settings-banner__info">
+                        <h2 class="settings-banner__title">
+                            Configurações do Sistema
+                        </h2>
+
+                        <p class="settings-banner__text">
+                            Personalização e gerenciamento operacional da missão Artemis-7.
+                        </p>
+                    </div>
+
+                    <div class="settings-banner__status">
+                        <span class="settings-status">
+                            SISTEMA ONLINE
+                        </span>
+                    </div>
+
+                </div>
+
+                <!-- GRID -->
+                <div class="settings-grid">
+
+                    <!-- MISSÃO -->
+                    <div class="settings-card">
+
+                        <h3 class="settings-card__title">
+                            Perfil da Missão
+                        </h3>
+
+                        <div class="settings-info">
+
+                            <div class="settings-info__item">
+                                <span class="settings-label">Missão</span>
+                                <span class="settings-value">Artemis-7</span>
+                            </div>
+
+                            <div class="settings-info__item">
+                                <span class="settings-label">Localização</span>
+                                <span class="settings-value">
+                                    Setor Shackleton
+                                </span>
+                            </div>
+
+                            <div class="settings-info__item">
+                                <span class="settings-label">Status</span>
+                                <span class="settings-value status-ok">
+                                    Operacional
+                                </span>
+                            </div>
+
+                            <div class="settings-info__item">
+                                <span class="settings-label">Tripulação</span>
+                                <span class="settings-value">
+                                    12 membros
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- INTERFACE -->
+                    <div class="settings-card">
+
+                        <h3 class="settings-card__title">
+                            Interface
+                        </h3>
+
+                        <div class="settings-options">
+
+                            <label class="radio-option">
+                                <input type="radio" name="theme" checked>
+                                <span>Lunar Dark</span>
+                            </label>
+
+                            <label class="radio-option">
+                                <input type="radio" name="theme">
+                                <span>Nebula Purple</span>
+                            </label>
+
+                            <label class="radio-option">
+                                <input type="radio" name="theme">
+                                <span>System Light</span>
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                    <!-- SISTEMA -->
+                    <div class="settings-card">
+
+                        <h3 class="settings-card__title">
+                            Sistema
+                        </h3>
+
+                        <div class="settings-toggles">
+
+                            <label class="toggle-row">
+
+                                <span>
+                                    Atualizações automáticas
+                                </span>
+
+                                <div class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </div>
+
+                            </label>
+
+                            <label class="toggle-row">
+
+                                <span>
+                                    Economia de energia
+                                </span>
+
+                                <div class="toggle-switch">
+                                    <input type="checkbox">
+                                    <span class="toggle-slider"></span>
+                                </div>
+
+                            </label>
+
+                            <label class="toggle-row">
+
+                                <span>
+                                    Sincronização orbital
+                                </span>
+
+                                <div class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </div>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                    <!-- SEGURANÇA -->
+                    <div class="settings-card">
+
+                        <h3 class="settings-card__title">
+                            Segurança
+                        </h3>
+
+                        <div class="settings-toggles">
+
+                            <label class="toggle-row">
+
+                                <span>
+                                    Autenticação biométrica
+                                </span>
+
+                                <div class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </div>
+
+                            </label>
+
+                            <label class="toggle-row">
+
+                                <span>
+                                    Criptografia ativa
+                                </span>
+
+                                <div class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </div>
+
+                            </label>
+
+                            <label class="toggle-row">
+
+                                <span>
+                                    Backup automático
+                                </span>
+
+                                <div class="toggle-switch">
+                                    <input type="checkbox">
+                                    <span class="toggle-slider"></span>
+                                </div>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
         </section>
 
     </main>
+
+    <div class="report-modal">
+
+        <div class="report-modal__overlay"></div>
+
+        <div class="report-modal__content">
+
+            <div class="report-modal__header">
+
+                <div>
+                    <h2 class="report-modal__title">
+                        Novo Relatório
+                    </h2>
+
+                    <p class="report-modal__subtitle">
+                        Registro operacional da missão Artemis-7
+                    </p>
+                </div>
+
+                <button class="report-modal__close">
+                    ✕
+                </button>
+
+            </div>
+
+            <form class="report-form">
+
+                <!-- TÍTULO -->
+                <div class="form-group">
+
+                    <label>
+                        Título
+                    </label>
+
+                    <input type="text" id="reportTitle" placeholder="Digite o título do relatório" required>
+
+                </div>
+
+                <!-- DESCRIÇÃO -->
+                <div class="form-group">
+
+                    <label>
+                        Descrição
+                    </label>
+
+                    <textarea id="reportDescription" placeholder="Descreva o registro operacional..."
+                        required></textarea>
+
+                </div>
+
+                <!-- CATEGORIA -->
+                <div class="form-group">
+
+                    <label>
+                        Categoria
+                    </label>
+
+                    <select id="reportCategory">
+
+                        <option value="energia">
+                            Energia
+                        </option>
+
+                        <option value="oxigenio">
+                            Oxigênio
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- SUBCATEGORIA -->
+                <div class="form-group">
+
+                    <label>
+                        Subcategoria
+                    </label>
+
+                    <select id="reportSubcategory">
+
+                        <option value="consumo">
+                            Consumo
+                        </option>
+
+                        <option value="producao">
+                            Produção
+                        </option>
+
+                        <option value="manutencao">
+                            Manutenção
+                        </option>
+
+                        <option value="emergencia">
+                            Emergência
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- BOTÕES -->
+                <div class="report-form__actions">
+
+                    <button type="button" class="btn btn--danger cancel-btn">
+
+                        Cancelar
+                    </button>
+
+                    <button type="submit" class="btn btn--primary create-btn">
+
+                        Criar Relatório
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
 
     <script src="./assets/js/script.js"></script>
 
 </body>
 
 </html>
+
+<!-- 
+    Para mudar para a sua branch, use o comando:    
+        git switch nome-da-branch
+    Faz o código normalmente 
+    Para subir as alterações para o repositório remoto, use os comandos:
+        git add .
+        git commit -m "mensagem de commit"
+        git push origin nome-da-branch
+-->
