@@ -137,8 +137,337 @@
         </section>
 
         <section id="sistema-de-energia" class="page">
-            <p>Conteúdo do Sistema de Energia</p>
+
+    <div class="energy">
+
+        <!-- HERO -->
+        <section class="energy__hero">
+
+            <div class="energy__stat">
+                <span class="energy__stat-label">EFICIÊNCIA ATUAL</span>
+                <span class="energy__stat-value energy__stat-value--success">84%</span>
+                <span class="energy__stat-info">↑ 5.2% vs ontem</span>
+            </div>
+
+            <div class="energy__stat">
+                <span class="energy__stat-label">PRODUÇÃO ATUAL</span>
+                <span class="energy__stat-value energy__stat-value--secondary">4.2 MW</span>
+                <span class="energy__stat-info">Painéis solares</span>
+            </div>
+
+            <div class="energy__stat">
+                <span class="energy__stat-label">AUTONOMIA</span>
+                <span class="energy__stat-value energy__stat-value--primary">11 DIAS</span>
+                <span class="energy__stat-info">Reserva total</span>
+            </div>
+
+            <div class="energy__stat">
+                <span class="energy__stat-label">ARMAZENAMENTO</span>
+                <span class="energy__stat-value energy__stat-value--success">82%</span>
+                <span class="energy__stat-info">Baterias OK</span>
+            </div>
+
+            <div class="energy__stat">
+                <span class="energy__stat-label">ALERTAS CRÍTICOS</span>
+                <span class="energy__stat-value energy__stat-value--secondary">2</span>
+                <span class="energy__stat-info">Atenção</span>
+            </div>
+
+            <div class="energy__stat">
+                <span class="energy__stat-label">MODO EMERGÊNCIA</span>
+                <span class="energy__stat-value energy__stat-value--success">OFF</span>
+                <span class="energy__stat-info">Sistema normal</span>
+            </div>
+
         </section>
+
+        <!-- GRID SUPERIOR -->
+        <section class="energy__grid">
+
+            <!-- GERAÇÃO -->
+<article class="energy-card">
+
+    <div class="energy-card__header">
+
+        <div class="energy-card__icon energy-card__icon--lightning">
+            <i class="ph ph-lightning"></i>
+        </div>
+
+        <div>
+            <h3 class="energy-card__title">
+                Geração
+            </h3>
+
+            <span class="energy-card__subtitle">
+                Painéis solares ativos
+            </span>
+        </div>
+
+    </div>
+
+    <div class="energy-circle">
+
+        <div class="energy-circle__ring energy-circle__ring--secondary"
+            style="--progress:25;">
+
+            <span class="energy-circle__value energy-circle__value--generation">
+                4.2
+                <small>MW</small>
+            </span>
+
+        </div>
+
+        <span class="energy-circle__label">
+            Produção Atual
+        </span>
+
+    </div>
+
+    <div class="energy-card__metrics">
+
+        <div>
+            <span>Pico Diário</span>
+            <strong>5.8 MW</strong>
+        </div>
+
+        <div>
+            <span>Média 24h</span>
+            <strong>3.9 MW</strong>
+        </div>
+
+        <div>
+            <span>Mínimo Noturno</span>
+            <strong>1.2 MW</strong>
+        </div>
+
+    </div>
+
+</article>
+
+<!-- ARMAZENAMENTO -->
+<article class="energy-card">
+
+    <div class="energy-card__header">
+
+        <div class="energy-card__icon energy-card__icon--success">
+            <i class="ph ph-battery-charging"></i>
+        </div>
+
+        <div>
+            <h3 class="energy-card__title">
+                Armazenamento
+            </h3>
+
+            <span class="energy-card__subtitle">
+                Bancos de bateria
+            </span>
+        </div>
+
+    </div>
+
+    <div class="energy-circle">
+
+        <div class="energy-circle__ring energy-circle__ring--success"
+            style="--progress:75;">
+
+            <span class="energy-circle__value energy-circle__value--storage">
+                75%
+            </span>
+
+        </div>
+
+        <span class="energy-circle__label">
+            Capacidade
+        </span>
+
+    </div>
+
+    <div class="energy-progress">
+
+        <span>Banco A (Principal)</span>
+
+        <div class="energy-progress__bar">
+            <div class="energy-progress__fill energy-progress__fill--success"
+                style="width:90%">
+            </div>
+        </div>
+
+        <span>90%</span>
+
+    </div>
+
+    <div class="energy-progress">
+
+        <span>Banco B (Backup)</span>
+
+        <div class="energy-progress__bar">
+            <div class="energy-progress__fill energy-progress__fill--success"
+                style="width:78%">
+            </div>
+        </div>
+
+        <span>78%</span>
+
+    </div>
+
+</article>
+
+            <!-- DISTRIBUIÇÃO -->
+            <article class="energy-card">
+
+                <div class="energy-card__header">
+
+                    <div class="energy-card__icon energy-card__icon--primary">
+                        <i class="ph ph-share-network"></i>
+                    </div>
+
+                    <div>
+                        <h3 class="energy-card__title">
+                            Distribuição
+                        </h3>
+
+                        <span class="energy-card__subtitle">
+                            Consumo por setor
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="distribution-list">
+
+                    <div class="distribution-item">
+                        <span>Habitat</span>
+                        <span>28%</span>
+                    </div>
+                    <div class="distribution-progress__bar">
+                        <div class="energy-progress__fill distribution__fill--habitat"
+                            style="width:28%">
+                        </div>
+                    </div>
+
+                    <div class="distribution-item">
+                        <span>Agricultura</span>
+                        <span>22%</span>
+                    </div>
+
+                    <div class="distribution-progress__bar">
+                        <div class="energy-progress__fill distribution__fill--agriculture"
+                            style="width:22%">
+                        </div>
+                    </div>
+
+                    <div class="distribution-item">
+                        <span>Laboratório</span>
+                        <span>18%</span>
+                    </div>
+
+                    <div class="distribution-progress__bar">
+                        <div class="energy-progress__fill distribution__fill--laboratory"
+                            style="width:18%">
+                        </div>
+                    </div>
+
+                    <div class="distribution-item">
+                        <span>Comando</span>
+                        <span>15%</span>
+                    </div>
+
+                    <div class="distribution-progress__bar">
+                        <div class="energy-progress__fill distribution__fill--command"
+                            style="width:15%">
+                        </div>
+                    </div>
+
+                    <div class="distribution-item">
+                        <span>Outros</span>
+                        <span>17%</span>
+                    </div>
+
+                    <div class="distribution-progress__bar">
+                        <div class="energy-progress__fill distribution__fill--others"
+                            style="width:17%">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="distribution-total">
+                    <span>Consumo Total</span>
+                    <strong>4.12 kWh</strong>
+                </div>
+
+            </article>
+
+        </section>
+
+        <!-- GRID INFERIOR -->
+
+        <section class="energy__bottom">
+
+            <article class="sidebar-panel">
+
+                <div class="sidebar-panel__header">
+                    <h2 class="sidebar-panel__title">
+                        Alertas e Riscos
+                    </h2>
+                </div>
+
+                <div class="alert-list">
+
+                    <div class="alert-card alert-card--danger">
+                        <span>Painel em manutenção</span>
+                        <span class="alert-tag--danger">ALTA</span>
+                    </div>
+
+                    <div class="alert-card alert-card--warning">
+                        <span>Eficiência reduzida</span>
+                        <span class="alert-tag--warning">MÉDIA</span>
+                    </div>
+
+                    <div class="alert-card alert-card--info">
+                        <span>Previsão climática</span>
+                        <span class="alert-tag--info">INFO</span>
+                    </div>
+
+                </div>
+
+            </article>
+
+            <article class="sidebar-panel">
+
+                <div class="sidebar-panel__header">
+                    <h2 class="sidebar-panel__title">
+                        Manutenção Operacional
+                    </h2>
+                    <p>Equipamentos e agendamentos</p>
+                </div>
+
+                <div class="maintenance-list">
+
+                    <div class="maintenance-card">
+                        <span>Painel Solar A-2</span>
+                        <span>EM ANDAMENTO</span>
+                    </div>
+
+                    <div class="maintenance-card">
+                        <span>Inversor FL-1</span>
+                        <span>AGENDADO</span>
+                    </div>
+                    
+                    <div class="responsible-info">
+                        <p>Responsável: Engenheiro Santos</p>
+                        <span>Início: 18:00</span>
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+    </div>
+
+</section>
 
         <section id="sistema-de-oxigenio" class="page">
             <p>Conteúdo do Sistema de Oxigênio</p>
