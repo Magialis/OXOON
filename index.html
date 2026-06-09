@@ -470,8 +470,483 @@
 </section>
 
         <section id="sistema-de-oxigenio" class="page">
-            <p>Conteúdo do Sistema de Oxigênio</p>
-        </section>
+            <!-- Conteúdo do Sistema de Oxigênio -->
+            <div class="oxygen-dashboard"> 
+                <div class="oxygen-card"> 
+                    <h3 class="oxygen-card__title">Reserva de Oxigênio</h3> 
+                    <p class="oxygen-card__value"> 75.0% </p> 
+                    <span class="oxygen-card__status"> ↑ 2% nas últimas 24h </span> 
+                </div> 
+                <div class="oxygen-card"> 
+                    <h3 class="oxygen-card__title">Produção Atual</h3> <p class="oxygen-card__value"> 4,5 kg/h </p> 
+                    <span class="oxygen-card__status"> +0,3 kg/h </span> 
+                </div> 
+                <div class="oxygen-card oxygen-card--alert"> 
+                    <h3 class="oxygen-card__title">Consumo Atual</h3> 
+                    <p class="oxygen-card__value"> 4,2 kg/h </p> 
+                    <span class="oxygen-card__status"> Normal </span> 
+                </div> 
+                <div class="oxygen-card"> 
+                    <h3 class="oxygen-card__title">CO₂</h3> 
+                    <p class="oxygen-card__value"> 650 ppm </p> 
+                    <span class="oxygen-card__status"> ↓ 15 ppm/h </span> 
+                </div> 
+                <div class="oxygen-card"> 
+                    <h3 class="oxygen-card__title">Eficiência Geral</h3> 
+                    <p class="oxygen-card__value"> 91% </p> 
+                    <span class="oxygen-card__status"> Estável </span> 
+                </div> 
+                <div class="oxygen-card"> 
+                    <h3 class="oxygen-card__title">Modo Emergência</h3> 
+                    <p class="oxygen-card__value oxygen-card__value--small"> OFF </p> 
+                    <span class="oxygen-card__status"> Atmosfera estável </span> 
+                </div> 
+            </div>
+
+            <div class="oxygen-grid"> 
+
+                <!-- QUALIDADE DO AR --> 
+                
+                <div class="oxygen-panel panel--air"> 
+                    <div class="panel-header"> 
+                        <h2>Qualidade do Ar</h2> 
+                        <p>Parâmetros atmosféricos</p> 
+                    </div> 
+                    <div class="air-list"> 
+                        <div class="air-item"> 
+                            <div class="air-item__top"> 
+                                <span>Concentração de O₂</span> 
+                                <div class="air-item__info"> 
+                                    <small>19.5-23.5%</small>
+                                    <strong>21.3%</strong> 
+                                    <span class="status status--green">NORMAL</span> 
+                                </div> 
+                            </div> 
+                            <div class="progress-bar"> 
+                                <div class="progress-fill progress-fill--green w-55"></div> 
+                            </div> 
+                        </div> 
+                        <div class="air-item"> 
+                            <div class="air-item__top"> 
+                                <span>CO₂ Residual</span> 
+                                <div class="air-item__info"> 
+                                    <small>&lt;0.10%</small> 
+                                    <strong>0.04%</strong> 
+                                    <span class="status status--green">BAIXO</span> 
+                                </div> 
+                            </div> 
+                            <div class="progress-bar">
+                                <div class="progress-fill progress-fill--green w-5"></div> 
+                            </div> 
+                        </div> 
+                        <div class="air-item"> 
+                            <div class="air-item__top"> 
+                                <span>Umidade Relativa</span> 
+                                <div class="air-item__info"> 
+                                    <small>40% - 60%</small> 
+                                    <strong>45%</strong> 
+                                    <span class="status status--purple">IDEAL</span> 
+                                </div> 
+                            </div> 
+                            <div class="progress-bar"> 
+                                <div class="progress-fill progress-fill--purple w-40"></div> 
+                            </div> 
+                        </div>
+                        <div class="air-item"> 
+                            <div class="air-item__top"> 
+                                <span>Pressão Atmosférica</span> 
+                                <div class="air-item__info"> 
+                                    <small>95 - 105 kPa</small> 
+                                    <strong>101.3 kPa</strong> 
+                                    <span class="status status--green">NORMAL</span> 
+                                </div> 
+                            </div> 
+                            <div class="progress-bar"> 
+                                    <div class="progress-fill progress-fill--green w-80"></div> 
+                                </div> 
+                            </div> 
+                            <div class="air-item"> 
+                                <div class="air-item__top"> 
+                                    <span>Temperatura do Ar</span> 
+                                    <div class="air-item__info"> 
+                                        <small>18°C - 26°C</small> 
+                                        <strong class="text-orange">22°C</strong> 
+                                        <span class="status status--green">CONFORT.</span> 
+                                    </div> 
+                                </div> 
+                                <div class="progress-bar"> 
+                                    <div class="progress-fill progress-fill--orange w-65"></div> 
+                                </div> 
+                            </div> 
+                            <div class="air-item"> 
+                                <div class="air-item__top"> 
+                                    <span>Compostos Voláteis</span> 
+                                    <div class="air-item__info"> 
+                                        <small>&lt; 50 ppm</small>
+                                        <strong class="text-purple">12 ppm</strong> 
+                                        <span class="status status--green">NORMAL</span> 
+                                    </div> 
+                                </div> 
+                                <div class="progress-bar"> 
+                                    <div class="progress-fill progress-fill--purple w-65"></div> 
+                                </div> 
+                            </div>
+                    </div> 
+                </div> 
+
+                <!-- PRODUÇÃO --> 
+                
+                <div class="oxygen-panel panel--production"> 
+                    <div class="panel-header"> 
+                        <h2>Produção de Oxigênio</h2> 
+                        <p>Sistemas ativos</p> 
+                    </div> 
+                    <div class="production-list"> 
+                        <div class="production-item"> 
+                            <div class="production-content"> 
+                                <h3>Eletrólise da Água</h3> 
+                                <div class="production-data"> 
+                                    <div class="production-data__item"> 
+                                        <span>Produção</span> 
+                                        <strong>2.3 kg/h</strong> 
+                                    </div> 
+                                    <div class="production-data__item"> 
+                                        <span>Eficiência</span> 
+                                        <strong>99.6%</strong> 
+                                    </div>
+                                    <div class="production-data__item"> 
+                                        <span>Consumo</span> 
+                                        <strong>180 kW</strong> 
+                                    </div> 
+                                </div> 
+                            </div> 
+                            <span class="status status--green"> ATIVO </span> 
+                        </div> 
+                        <div class="divider"></div> 
+                        <div class="production-item"> 
+                            <div class="production-content"> 
+                                <h3>Biodomos / Plantas</h3> 
+                                <div class="production-data"> 
+                                    <div class="production-data__item"> 
+                                        <span>Contribuição O₂</span> 
+                                        <strong>0.8 kg/h</strong> 
+                                    </div> 
+                                    <div class="production-data__item"> 
+                                        <span>CO₂ Absorvido</span> 
+                                        <strong>1.2 kg/h</strong> 
+                                    </div>
+                                    <div class="production-data__item"> 
+                                        <span>Área Ativa</span> 
+                                        <strong>450 m²</strong> 
+                                    </div> 
+                                </div> 
+                            </div> 
+                            <span class="status status--green"> ATIVO </span> 
+                        </div>
+                        <div class="divider"></div> 
+                        <div class="production-item"> 
+                            <div class="production-content"> 
+                                <h3>Reciclagem Atmosférica</h3> 
+                                <div class="production-data"> 
+                                    <div class="production-data__item"> 
+                                        <span>Eficiência</span> 
+                                        <strong>94%</strong> 
+                                    </div> 
+                                    <div class="production-data__item"> 
+                                        <span>Filtros</span> 
+                                        <strong>OK</strong> 
+                                    </div> 
+                                    <div class="production-data__item"> 
+                                        <span>Filtros Operacionais</span> 
+                                        <strong>8/8</strong> 
+                                    </div> 
+                                </div> 
+                            </div> 
+                            <span class="status status--green"> ATIVO </span> 
+                        </div> 
+                    </div> 
+                </div> 
+
+                <!-- DONUT --> 
+                <div class="oxygen-panel oxygen-panel--chart"> 
+                    <div class="panel-header"> 
+                        <h2>Origem da Produção de Oxigênio</h2> 
+                        <p>Distribuição da produção atual entre os sistemas</p> 
+                    </div> 
+                    <div class="donut-chart"></div> 
+                    <div class="chart-table"> 
+                        <!-- HEADER --> 
+                        <div class="chart-table__header"> 
+                            <span>SISTEMA</span> 
+                            <span>PRODUÇÃO</span> 
+                            <span>PARTICIPAÇÃO</span> 
+                        </div> 
+                        <!-- ITEM --> 
+                        <div class="chart-row"> 
+                            <div class="chart-system"> 
+                                <span class="legend-dot legend-dot--green"></span> 
+                                <span>Eletrólise da Água</span> 
+                            </div> 
+                            <div class="chart-production"> 2.3 kg/h </div> 
+                            <div class="chart-percent chart-percent--green"> 
+                                <span>51,1%</span> 
+                                <div class="chart-line"> 
+                                    <div class="chart-line-fill chart-line-fill--green w-55"></div> 
+                                </div> 
+                            </div> 
+                        </div> 
+                        <!-- ITEM --> 
+                        <div class="chart-row"> 
+                            <div class="chart-system"> 
+                                <span class="legend-dot legend-dot--purple"></span> 
+                                <span>Reciclagem Atmosférica</span> 
+                            </div> 
+                            <div class="chart-production chart-production--purple"> 1.4 kg/h </div> 
+                            <div class="chart-percent chart-percent--purple"> 
+                                <span>31,1%</span> 
+                                <div class="chart-line"> 
+                                    <div class="chart-line-fill chart-line-fill--purple w-40"></div> 
+                                </div> 
+                            </div> 
+                        </div> 
+                        <!-- ITEM --> 
+                        <div class="chart-row"> 
+                            <div class="chart-system"> 
+                                <span class="legend-dot legend-dot--orange"></span> 
+                                <span>Biodomos / Plantas</span> 
+                            </div> 
+                            <div class="chart-production chart-production--orange"> 0.8 kg/h </div> 
+                            <div class="chart-percent chart-percent--orange"> 
+                                <span>17,8%</span> 
+                                <div class="chart-line"> 
+                                    <div class="chart-line-fill chart-line-fill--orange w-20"></div> 
+                                </div> 
+                            </div> 
+                        </div> 
+                    </div> 
+                </div>
+
+                <div class="atmosphere-grid">
+                    <!-- DISTRIBUIÇÃO ATMOSFÉRICA -->
+                    <div class="dashboard-card panel">
+                        <div class="card-header">
+                            <h2>Distribuição Atmosférica</h2>
+                            <p>Fluxo de O₂ por módulo</p>
+                        </div>
+                        <div class="module-list">
+                            <div class="module-item">
+                                <div>
+                                    <h3>Habitat Principal</h3>
+                                    <small>Pressão: 101.2 kPa</small>
+                                </div>
+                                <div class="module-info">
+                                    <strong>1.4 kg/h</strong>
+                                    <span class="status-dot status-dot--green">
+                                        NORMAL
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="module-item">
+                                <div>
+                                    <h3>Laboratório</h3>
+                                    <small>Pressão: 101.1 kPa</small>
+                                </div>
+                                <div class="module-info">
+                                    <strong>0.8 kg/h</strong>
+                                    <span class="status-dot status-dot--green">
+                                        NORMAL
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="module-item">
+                                <div>
+                                    <h3>Agricultura</h3>
+                                    <small>Pressão: 101.4 kPa</small>
+                                </div>
+                                <div class="module-info">
+                                    <strong>0.9 kg/h</strong>
+                                    <span class="status-dot status-dot--green">
+                                        NORMAL
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="module-item">
+                                <div>
+                                    <h3>Centro de Comando</h3>
+                                    <small>Pressão: 101.0 kPa</small>
+                                </div>
+                                <div class="module-info">
+                                    <strong>0.6 kg/h</strong>
+                                    <span class="status-dot status-dot--green">
+                                        NORMAL
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="module-item">
+                                <div>
+                                    <h3>Engenharia</h3>
+                                    <small>Pressão: 95.0 kPa</small>
+                                </div>
+                                <div class="module-info">
+                                    <strong>0.5 kg/h</strong>
+                                    <span class="status-dot status-dot--orange">
+                                        BAIXO
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CONSUMO -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h2>Consumo da Tripulação</h2>
+                            <p>Monitoramento individual e coletivo</p>
+                        </div>
+                        <div class="crew-grid">
+                            <div class="crew-box">
+                                <strong>9.6 kg/dia</strong>
+                                <span>CONSUMO COLETIVO</span>
+                            </div>
+                            <div class="crew-box crew-box--purple">
+                                <strong>0.8 kg/dia</strong>
+                                <span>MÉDIA INDIVIDUAL</span>
+                            </div>
+                            <div class="crew-box crew-box--orange">
+                                <strong>2</strong>
+                                <span>EVA ATIVO</span>
+                            </div>
+                            <div class="crew-box">
+                                <strong>4.2h</strong>
+                                <span>DURAÇÃO MÉDIA EVA</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- HISTÓRICO -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h2>Histórico Atmosférico</h2>
+                            <p>Eventos recentes</p>
+                        </div>
+                        <div class="history-list">
+                            <div class="history-item history-item--green">
+                                <h4>Autoajuste executado</h4>
+                                <small>RECICLAGEM ATMOSFÉRICA - Eficiência dos filtros caiu para 91%</small>
+                            </div>
+                            <div class="history-item history-item--purple">
+                                <h4>Consumo atmosférico elevado detectado</h4>
+                                <small>Filtro do módulo B-3 programado para troca em 48h</small>
+                            </div>
+                            <div class="history-item history-item--empty"></div>
+                            <div class="history-item history-item--empty"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="storage-grid">
+
+                    <!-- HISTÓRICO E MANUTENÇÃO -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h2>Histórico e Manutenção</h2>
+                            <p>Solicitações recentes</p>
+                        </div>
+                        <div class="maintenance-list">
+                            <div class="maintenance-item">
+                                <div class="maintenance-item__top">
+                                    <h4>Reciclagem Atmosférica - Módulo B-3</h4>
+                                    <span class="status status--purple">PENDENTE</span>
+                                </div>
+                                <p>Troca de Filtro</p>
+                                <div class="maintenance-item__divider"></div>
+                                <div class="maintenance-item__bottom">
+                                    <small>Responsável: Eng. Santos</small>
+                                    <small class="maintenance-priority">Alta Prioridade</small>
+                                </div>
+                            </div>
+                            <div class="maintenance-item maintenance-item--done">
+                                <div class="maintenance-item__top">
+                                    <h4>Reciclagem Atmosférica</h4>
+                                    <span class="status status--done">FINALIZADO</span>
+                                </div>
+                                <p>Ajuste dos filtros devido à queda de reciclagem</p>
+                                <div class="maintenance-item__divider"></div>
+                                <div class="maintenance-item__bottom">
+                                    <small>Autoajuste</small>
+                                    <small class="maintenance-time">2h atrás</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ARMAZENAMENTO -->
+                    <div class="dashboard-card">
+                        <div class="card-header storage-card-header">
+                            <div>
+                                <h2>Armazenamento</h2>
+                                <p>Tanques e cilindros</p>
+                            </div>
+                        </div>
+
+                        <!-- Tanques Criogênicos -->
+                        <div class="storage-section">
+                            <div class="storage-section__title">
+                                <span>Tanques Criogênicos</span>
+                                <span class="status status--green">OPERACIONAL</span>
+                            </div>
+                            <div class="storage-data">
+                                <div class="storage-data__item">
+                                    <span>Capacidade</span>
+                                    <strong>1.640 kg</strong>
+                                </div>
+                                <div class="storage-data__item">
+                                    <span>Pressão Interna</span>
+                                    <strong>145 PSI</strong>
+                                </div>
+                                <div class="storage-data__item">
+                                    <span>Eficiência Térmica</span>
+                                    <strong>98.7%</strong>
+                                </div>
+                                <div class="storage-data__item">
+                                    <span>Temperatura</span>
+                                    <strong class="text-blue">-183°C</strong>
+                                </div>
+                                <div class="storage-data__item">
+                                    <span>Autonomia</span>
+                                    <strong>28 dias</strong>
+                                </div>
+                                <div class="storage-data__item">
+                                    <span>Evaporação</span>
+                                    <strong>0.3%/h</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <!-- Cilindros Pressurizados -->
+                        <div class="storage-section">
+                            <div class="storage-section__title">
+                                <span>Cilindros Pressurizados</span>
+                                <span class="status status--orange">RESERVA</span>
+                            </div>
+                            <div class="storage-data">
+                                <div class="storage-data__item">
+                                    <span>Unidades Ativas</span>
+                                    <strong class="text-orange">12/15</strong>
+                                </div>
+                                <div class="storage-data__item">
+                                    <span>Pressão Média</span>
+                                    <strong>2.200 PSI</strong>
+                                </div>
+                                <div class="storage-data__item">
+                                    <span>Capacidade Total</span>
+                                    <strong>4200 L</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
         <section id="setores-de-consumo" class="page">
             <div class="previsoes-card">
