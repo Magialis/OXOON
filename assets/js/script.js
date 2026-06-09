@@ -251,3 +251,9 @@ reportForm.addEventListener('submit', event => {
 // JS DOS RELATÓRIOS
 
 // -----------------
+
+
+
+// JS DAS CONFIGURAÇÕES
+
+// -----------------
