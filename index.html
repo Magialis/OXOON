@@ -50,7 +50,7 @@
                         <a href="#alertas">
                             Alertas
                         </a>
-                        <span class="badge">3</span>
+                        <span class="badge">6</span>
                     </li>
                     <li class="nav__item">
                         <a href="#relatorios">Relatórios</a>
@@ -84,8 +84,50 @@
             <span class="clock__timezone">UTC</span>
         </div>
         <button class="btn btn--ghost">Alertas</button>
-        <a href="#relatorios" class="btn btn--primary">+ Relatório</a>
-        <button class="avatar" aria-label="Menu do Usuário">CG</button>
+        <button class="btn btn--primary new-report-btn">+ Relatório</button>
+        <div class="user-menu">
+            <button class="user-menu__trigger">
+                <div class="user-avatar">
+                    CG
+                </div>
+                <span class="user-arrow">
+                    ▼
+                </span>
+            </button>
+            <div class="user-dropdown">
+                <div class="user-dropdown__header">
+                    <div class="user-dropdown__avatar">
+                        CG
+                    </div>
+                    <div>
+                        <span class="dropdown-name">
+                            Garcia
+                        </span>
+                        <span class="dropdown-role">
+                            Comandante da Artemis-7
+                        </span>
+                    </div>
+                </div>
+                <div class="dropdown-divider"></div>
+                <button class="dropdown-item">
+                    Perfil Operacional
+                </button>
+                <button class="dropdown-item">
+                    Preferências
+                </button>
+                <button class="dropdown-item">
+                    Logs da Sessão
+                </button>
+                <button class="dropdown-item">
+                    Central de Segurança
+                </button>
+                <div class="dropdown-divider"></div>
+                <button class="dropdown-item dropdown-item--danger">
+                    Encerrar Sessão
+                </button>
+            </div>
+        </div>
+        <!-- <button class="avatar" aria-label="Menu do Usuário">CG</button> -->
     </header>
 
     <main>
@@ -111,7 +153,129 @@
         </section>
 
         <section id="alertas" class="page">
-            <p>Conteúdo dos Alertas</p>
+
+            <section class="hero-card">
+                <div class="hero-card__content">
+                    <h3 class="hero-card__title">Central de Alertas</h3>
+                    <p class="hero-card__description">
+                        Todos os alertas do sistema ordenados por prioridade e tempo.
+                    </p>
+                </div>
+
+                <div class="hero-card__status-list">
+                    <div class="hero-card__status-item">
+                        <h2 class="hero-card__status-value">01</h2>
+                        <span class="hero-card__status-label">CRÍTICO</span>
+                    </div>
+                    <div class="hero-card__status-item">
+                        <h2 class="hero-card__status-value">03</h2>
+                        <span class="hero-card__status-label">ATENÇÃO</span>
+                    </div>
+                    <div class="hero-card__status-item">
+                        <h2 class="hero-card__status-value">02</h2>
+                        <span class="hero-card__status-label">RESOLVIDO</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="alertas-page">
+
+                <div class="alertas-page__grid">
+
+                    <div class="alerta-card alerta-card--critica">
+                        <div class="alerta-card__status">CRÍTICO</div>
+                        <img src="./assets/images/alert icon.png" alt="Ícone de Alerta" class="alerta-card__icone">
+                        <h3 class="alerta-card__title">RESERVA ALIMENTAR BAIXA</h3>
+                        <p class="alerta-card__description">
+                            Nível em 23%. Solicitar reabastecimento ou ativar protocolo de racionamento. Previsão de
+                            esgotamento: 18 dias.
+                        </p>
+                    </div>
+
+                    <div class="alerta-card alerta-card--atencao">
+                        <div class="alerta-card__status">ATENÇÃO</div>
+                        <img src="./assets/images/alert icon.png" alt="Ícone de Atenção" class="alerta-card__icone">
+                        <h3 class="alerta-card__title">ÁGUA ABAIXO DO IDEAL - MÓDULO B-3</h3>
+                        <p class="alerta-card__description">
+                            Sistema de reciclagem com eficiência reduzida (67%).
+                            Verificar filtros e sensores.
+                        </p>
+                    </div>
+
+                    <div class="alerta-card alerta-card--resolvido">
+                        <div class="alerta-card__status">RESOLVIDO</div>
+                        <img src="./assets/images/safe icon.png" alt="Ícone de Sucesso" class="alerta-card__icone">
+                        <h3 class="alerta-card__title">PAINEL SOLAR A-2 OFFLINE</h3>
+                        <p class="alerta-card__description">
+                            Manutenção programada em andamento. Retorno estimado: 04:30 UTC.
+                        </p>
+                    </div>
+
+                    <div class="alerta-card alerta-card--atencao">
+                        <div class="alerta-card__status">ATENÇÃO</div>
+                        <img src="./assets/images/alert icon.png" alt="Ícone de Atenção" class="alerta-card__icone">
+                        <h3 class="alerta-card__title">GERAÇÃO SOLAR ABAIXO DO IDEAL</h3>
+                        <p class="alerta-card__description">
+                            Captação fotovoltaica operando com eficiência reduzida (61%). Verificar acúmulo de regolito
+                            nos painéis e alinhamento orbital.
+                        </p>
+                    </div>
+
+                    <div class="alerta-card alerta-card--resolvido">
+                        <div class="alerta-card__status">RESOLVIDO</div>
+                        <img src="./assets/images/safe icon.png" alt="Ícone de Sucesso" class="alerta-card__icone">
+                        <h3 class="alerta-card__title">NÍVEL DE OXIGÊNIO ESTABILIZADO</h3>
+                        <p class="alerta-card__description">
+                            Sistema de suporte à vida restabelecido com eficiência nominal (100%). Fluxo de oxigênio
+                            normalizado e reserva estratégica reabastecida.
+                        </p>
+                    </div>
+
+                    <div class="alerta-card alerta-card--atencao">
+                        <div class="alerta-card__status">ATENÇÃO</div>
+                        <img src="./assets/images/alert icon.png" alt="Ícone de Atenção" class="alerta-card__icone">
+                        <h3 class="alerta-card__title">RESERVA DE OXIGÊNIO EM FAIXA CRÍTICA</h3>
+                        <p class="alerta-card__description">
+                            Nível em 24%. Solicitar redistribuição entre módulos habitáveis. Previsão de autonomia
+                            operacional: 19 horas.
+                        </p>
+                    </div>
+                </div>
+
+                <aside class="lista-alertas">
+                    <h3 class="lista-alertas__title">Lista de Alertas</h3>
+                    <ul class="lista-alertas__items">
+                        <li class="lista-alertas__item">
+                            Reserva alimentar crítica
+                            <span class="lista-alertas__tag lista-alertas__tag--critico">PENDENTE</span>
+                        </li>
+                        <li class="lista-alertas__item">
+                            Água abaixo do ideal
+                            <span class="lista-alertas__tag lista-alertas__tag--pendente">PENDENTE</span>
+                        </li>
+                        <li class="lista-alertas__item">
+                            Painel solar A-2 offline
+                            <span class="lista-alertas__tag lista-alertas__tag--resolvido">RESOLVIDO</span>
+                        </li>
+                        <li class="lista-alertas__item">
+                            Geração solar abaixo do ideal
+                            <span class="lista-alertas__tag lista-alertas__tag--pendente">PENDENTE</span>
+                        </li>
+                        <li class="lista-alertas__item">
+                            Nível de oxigênio estabilizado
+                            <span class="lista-alertas__tag lista-alertas__tag--resolvido">RESOLVIDO</span>
+                        </li>
+                        <li class="lista-alertas__item">
+                            Reserva de oxigênio crítica
+                            <span class="lista-alertas__tag lista-alertas__tag--pendente">PENDENTE</span>
+                        </li>
+                    </ul>
+                    <div class="lista-alertas__totalizer">
+                        TOTAL DE ALERTAS
+                        <span class="lista-alertas__totalizer-value">06</span>
+                    </div>
+                </aside>
+            </section>
         </section>
 
         <section id="relatorios" class="page">
@@ -689,10 +853,343 @@
             </section>
         </section>
 
+        <section id="configuracoes" class="page">
+            <section class="settings-section">
+
+                <!-- BANNER -->
+                <div class="settings-banner">
+
+                    <div class="settings-banner__info">
+                        <h2 class="settings-banner__title">
+                            Configurações do Sistema
+                        </h2>
+
+                        <p class="settings-banner__text">
+                            Personalização e gerenciamento operacional da missão Artemis-7.
+                        </p>
+                    </div>
+
+                    <div class="settings-banner__status">
+                        <span class="settings-status">
+                            SISTEMA ONLINE
+                        </span>
+                    </div>
+
+                </div>
+
+                <!-- GRID -->
+                <div class="settings-grid">
+
+                    <!-- MISSÃO -->
+                    <div class="settings-card">
+
+                        <h3 class="settings-card__title">
+                            Perfil da Missão
+                        </h3>
+
+                        <div class="settings-info">
+
+                            <div class="settings-info__item">
+                                <span class="settings-label">Missão</span>
+                                <span class="settings-value">Artemis-7</span>
+                            </div>
+
+                            <div class="settings-info__item">
+                                <span class="settings-label">Localização</span>
+                                <span class="settings-value">
+                                    Setor Shackleton
+                                </span>
+                            </div>
+
+                            <div class="settings-info__item">
+                                <span class="settings-label">Status</span>
+                                <span class="settings-value status-ok">
+                                    Operacional
+                                </span>
+                            </div>
+
+                            <div class="settings-info__item">
+                                <span class="settings-label">Tripulação</span>
+                                <span class="settings-value">
+                                    12 membros
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- INTERFACE -->
+                    <div class="settings-card">
+
+                        <h3 class="settings-card__title">
+                            Interface
+                        </h3>
+
+                        <div class="settings-options">
+
+                            <label class="radio-option">
+                                <input type="radio" name="theme" checked>
+                                <span>Lunar Dark</span>
+                            </label>
+
+                            <label class="radio-option">
+                                <input type="radio" name="theme">
+                                <span>Nebula Purple</span>
+                            </label>
+
+                            <label class="radio-option">
+                                <input type="radio" name="theme">
+                                <span>System Light</span>
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                    <!-- SISTEMA -->
+                    <div class="settings-card">
+
+                        <h3 class="settings-card__title">
+                            Sistema
+                        </h3>
+
+                        <div class="settings-toggles">
+
+                            <label class="toggle-row">
+
+                                <span>
+                                    Atualizações automáticas
+                                </span>
+
+                                <div class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </div>
+
+                            </label>
+
+                            <label class="toggle-row">
+
+                                <span>
+                                    Economia de energia
+                                </span>
+
+                                <div class="toggle-switch">
+                                    <input type="checkbox">
+                                    <span class="toggle-slider"></span>
+                                </div>
+
+                            </label>
+
+                            <label class="toggle-row">
+
+                                <span>
+                                    Sincronização orbital
+                                </span>
+
+                                <div class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </div>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                    <!-- SEGURANÇA -->
+                    <div class="settings-card">
+
+                        <h3 class="settings-card__title">
+                            Segurança
+                        </h3>
+
+                        <div class="settings-toggles">
+
+                            <label class="toggle-row">
+
+                                <span>
+                                    Autenticação biométrica
+                                </span>
+
+                                <div class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </div>
+
+                            </label>
+
+                            <label class="toggle-row">
+
+                                <span>
+                                    Criptografia ativa
+                                </span>
+
+                                <div class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </div>
+
+                            </label>
+
+                            <label class="toggle-row">
+
+                                <span>
+                                    Backup automático
+                                </span>
+
+                                <div class="toggle-switch">
+                                    <input type="checkbox">
+                                    <span class="toggle-slider"></span>
+                                </div>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+        </section>
+
     </main>
+
+    <div class="report-modal">
+
+        <div class="report-modal__overlay"></div>
+
+        <div class="report-modal__content">
+
+            <div class="report-modal__header">
+
+                <div>
+                    <h2 class="report-modal__title">
+                        Novo Relatório
+                    </h2>
+
+                    <p class="report-modal__subtitle">
+                        Registro operacional da missão Artemis-7
+                    </p>
+                </div>
+
+                <button class="report-modal__close">
+                    ✕
+                </button>
+
+            </div>
+
+            <form class="report-form">
+
+                <!-- TÍTULO -->
+                <div class="form-group">
+
+                    <label>
+                        Título
+                    </label>
+
+                    <input type="text" id="reportTitle" placeholder="Digite o título do relatório" required>
+
+                </div>
+
+                <!-- DESCRIÇÃO -->
+                <div class="form-group">
+
+                    <label>
+                        Descrição
+                    </label>
+
+                    <textarea id="reportDescription" placeholder="Descreva o registro operacional..."
+                        required></textarea>
+
+                </div>
+
+                <!-- CATEGORIA -->
+                <div class="form-group">
+
+                    <label>
+                        Categoria
+                    </label>
+
+                    <select id="reportCategory">
+
+                        <option value="energia">
+                            Energia
+                        </option>
+
+                        <option value="oxigenio">
+                            Oxigênio
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- SUBCATEGORIA -->
+                <div class="form-group">
+
+                    <label>
+                        Subcategoria
+                    </label>
+
+                    <select id="reportSubcategory">
+
+                        <option value="consumo">
+                            Consumo
+                        </option>
+
+                        <option value="producao">
+                            Produção
+                        </option>
+
+                        <option value="manutencao">
+                            Manutenção
+                        </option>
+
+                        <option value="emergencia">
+                            Emergência
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- BOTÕES -->
+                <div class="report-form__actions">
+
+                    <button type="button" class="btn btn--danger cancel-btn">
+
+                        Cancelar
+                    </button>
+
+                    <button type="submit" class="btn btn--primary create-btn">
+
+                        Criar Relatório
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
 
     <script src="./assets/js/script.js"></script>
 
 </body>
 
 </html>
+
+<!-- 
+    Para mudar para a sua branch, use o comando:    
+        git switch nome-da-branch
+    Faz o código normalmente 
+    Para subir as alterações para o repositório remoto, use os comandos:
+        git add .
+        git commit -m "mensagem de commit"
+        git push origin nome-da-branch
+-->
