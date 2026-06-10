@@ -3143,6 +3143,10 @@ color: var(--clr-tertiary);
     gap: var(--space-4xl);
 }
 
+.hidden {
+    display: none !important;
+}
+
 .report-card {
     display: flex;
     flex-direction: column;

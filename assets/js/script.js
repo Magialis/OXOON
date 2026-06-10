@@ -1,129 +1,237 @@
-function tick() {
-    const n = new Date();
-    const pad = x => String(x).padStart(2, '0');
-    document.getElementById('clock').textContent =
-        pad(n.getUTCHours()) + ':' + pad(n.getUTCMinutes()) + ':' + pad(n.getUTCSeconds());
+/* =========================================================
+   DOM
+========================================================= */
+
+const DOM = {
+    clock: document.querySelector('#clock'),
+
+    navItems: document.querySelectorAll('.nav__item'),
+    pages: document.querySelectorAll('.page'),
+
+    userMenu: document.querySelector('.user-menu'),
+    userTrigger: document.querySelector('.user-menu__trigger'),
+
+    reportModal: document.querySelector('.report-modal'),
+    modalOverlay: document.querySelector('.report-modal__overlay'),
+    modalOpenButton: document.querySelector('.new-report-btn'),
+    modalCloseButton: document.querySelector('.report-modal__close'),
+    modalCancelButton: document.querySelector('.cancel-btn'),
+
+    reportForm: document.querySelector('.report-form'),
+    reportsGrid: document.querySelector('.reports-grid'),
+
+    filterButtons: document.querySelectorAll('[data-filter]'),
+    subfilterButtons: document.querySelectorAll('[data-subfilter]'),
+
+    hotspots: document.querySelectorAll('.mapa-hotspot'),
+
+    mapaWrapper: document.querySelector('#mapaWrapper'),
+    mapaInner: document.querySelector('#mapaInner'),
+    fullscreenButton: document.querySelector('#mapaFullscreenBtn'),
+    fullscreenIcon: document.querySelector('#mapaFullscreenIcon')
 }
-tick();
-setInterval(tick, 1000);
 
-const navItems = document.querySelectorAll('.nav__item');
-const pages = document.querySelectorAll('.page');
 
-navItems.forEach(item => {
-    item.addEventListener('click', (event) => {
-        event.preventDefault();
-        navItems.forEach(nav => nav.classList.remove('active'));
-        item.classList.add('active');
+/* =========================================================
+   HELPERS
+========================================================= */
 
-        const targetId = item
-            .querySelector('a')
-            .getAttribute('href')
-            .replace('#', '');
+function padNumber(value) {
+    return String(value).padStart(2, '0')
+}
 
-        pages.forEach(page => {
-            page.classList.remove('active');
-        });
-        document
-            .getElementById(targetId)
-            .classList.add('active');
-    });
-});
+function removeActiveClass(elements) {
+    elements.forEach(element => {
+        element.classList.remove('active')
+    })
+}
 
-const userMenu = document.querySelector('.user-menu')
-const userTrigger = document.querySelector('.user-menu__trigger')
 
-userTrigger.addEventListener('click', () => {
-    userMenu.classList.toggle('active')
-})
+/* =========================================================
+   CLOCK
+========================================================= */
 
-document.addEventListener('click', event => {
-    const clickedInsideMenu = userMenu.contains(event.target)
+function updateClock() {
+    if (!DOM.clock) return
+
+    const now = new Date()
+
+    const hours = padNumber(now.getUTCHours())
+    const minutes = padNumber(now.getUTCMinutes())
+    const seconds = padNumber(now.getUTCSeconds())
+
+    DOM.clock.textContent = `${hours}:${minutes}:${seconds}`
+}
+
+function initializeClock() {
+    updateClock()
+    setInterval(updateClock, 1000)
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+function showPage(pageId) {
+    DOM.pages.forEach(page => {
+        page.classList.remove('active')
+    })
+
+    document
+        .getElementById(pageId)
+        ?.classList.add('active')
+}
+
+function handleNavigation(event) {
+    event.preventDefault()
+
+    const navItem = event.currentTarget
+
+    removeActiveClass(DOM.navItems)
+
+    navItem.classList.add('active')
+
+    const targetId = navItem
+        .querySelector('a')
+        .getAttribute('href')
+        .replace('#', '')
+
+    showPage(targetId)
+}
+
+function initializeNavigation() {
+    DOM.navItems.forEach(item => {
+        item.addEventListener('click', handleNavigation)
+    })
+}
+
+
+/* =========================================================
+   USER MENU
+========================================================= */
+
+function toggleUserMenu() {
+    DOM.userMenu.classList.toggle('active')
+}
+
+function closeUserMenu(event) {
+    const clickedInsideMenu = DOM.userMenu.contains(event.target)
+
     if (!clickedInsideMenu) {
-        userMenu.classList.remove('active')
+        DOM.userMenu.classList.remove('active')
     }
-})
+}
 
-/* MODAL */
+function initializeUserMenu() {
+    if (!DOM.userMenu || !DOM.userTrigger) return
 
-const reportModal = document.querySelector('.report-modal')
-const openModalBtn = document.querySelector('.new-report-btn')
-const closeModalBtn = document.querySelector('.report-modal__close')
-const cancelBtn = document.querySelector('.cancel-btn')
+    DOM.userTrigger.addEventListener('click', toggleUserMenu)
 
-const reportForm = document.querySelector('.report-form')
-const reportsGrid = document.querySelector('.reports-grid')
+    document.addEventListener('click', closeUserMenu)
+}
 
-openModalBtn.addEventListener('click', () => {
-    reportModal.classList.add('active')
-})
 
+/* =========================================================
+   REPORT MODAL
+========================================================= */
+
+function openModal() {
+    DOM.reportModal.classList.add('active')
+}
 
 function closeModal() {
-    reportModal.classList.remove('active')
+    DOM.reportModal.classList.remove('active')
 }
 
-closeModalBtn.addEventListener('click', closeModal)
-cancelBtn.addEventListener('click', closeModal)
+function initializeModal() {
+    if (!DOM.reportModal) return
 
-document
-    .querySelector('.report-modal__overlay')
-    .addEventListener('click', closeModal)
+    DOM.modalOpenButton?.addEventListener('click', openModal)
+
+    DOM.modalCloseButton?.addEventListener('click', closeModal)
+
+    DOM.modalCancelButton?.addEventListener('click', closeModal)
+
+    DOM.modalOverlay?.addEventListener('click', closeModal)
+}
+
+
+/* =========================================================
+   REPORTS
+========================================================= */
+
+const REPORT_CATEGORIES = {
+    energia: {
+        label: 'Energia',
+        className: 'tag--energy'
+    },
+
+    oxigenio: {
+        label: 'Oxigênio',
+        className: 'tag--oxygen'
+    }
+}
+
+const REPORT_SUBCATEGORIES = {
+    consumo: {
+        label: 'Consumo',
+        className: 'tag--consumption'
+    },
+
+    producao: {
+        label: 'Produção',
+        className: 'tag--production'
+    },
+
+    manutencao: {
+        label: 'Manutenção',
+        className: 'tag--maintenance'
+    },
+
+    emergencia: {
+        label: 'Emergência',
+        className: 'tag--danger'
+    }
+}
 
 function generateMJD() {
     const now = new Date()
+
     const unixTime = now.getTime()
+
     const mjd = unixTime / 86400000 + 40587
+
     return `MJD ${mjd.toFixed(3)}`
 }
 
+function createReportCard({
+    title,
+    description,
+    category,
+    subcategory
+}) {
 
-function getCategoryLabel(category) {
-    if (category === 'energia') return 'Energia'
-    return 'Oxigênio'
-}
+    const categoryData = REPORT_CATEGORIES[category]
 
-function getSubcategoryLabel(subcategory) {
-    const labels = {
-        consumo: 'Consumo',
-        producao: 'Produção',
-        manutencao: 'Manutenção',
-        emergencia: 'Emergência'
-    }
-    return labels[subcategory]
-}
+    const subcategoryData = REPORT_SUBCATEGORIES[subcategory]
 
-function getSubcategoryClass(subcategory) {
-    const classes = {
-        consumo: 'tag--consumption',
-        producao: 'tag--production',
-        manutencao: 'tag--maintenance',
-        emergencia: 'tag--danger'
-    }
-    return classes[subcategory]
-}
-
-reportForm.addEventListener('submit', event => {
-    event.preventDefault()
-
-    const title = document.querySelector('#reportTitle').value
-    const description = document.querySelector('#reportDescription').value
-    const category = document.querySelector('#reportCategory').value
-    const subcategory = document.querySelector('#reportSubcategory').value
-
-    const card = `
-        <div
+    return `
+        <article
             class="report-card"
             data-category="${category}"
             data-subcategory="${subcategory}">
 
             <div class="report-card__tags">
-                <span class="tag ${category === 'energia' ? 'tag--energy' : 'tag--oxygen'}">
-                    ${getCategoryLabel(category)}
+
+                <span class="tag ${categoryData.className}">
+                    ${categoryData.label}
                 </span>
-                <span class="tag ${getSubcategoryClass(subcategory)}">
-                    ${getSubcategoryLabel(subcategory)}
+
+                <span class="tag ${subcategoryData.className}">
+                    ${subcategoryData.label}
                 </span>
+
             </div>
 
             <h3 class="report-card__title">
@@ -138,92 +246,47 @@ reportForm.addEventListener('submit', event => {
                 ${generateMJD()}
             </span>
 
-        </div>
+        </article>
     `
+}
 
-    reportsGrid.insertAdjacentHTML('afterbegin', card)
+function handleReportSubmit(event) {
+    event.preventDefault()
+
+    const title = document.querySelector('#reportTitle').value
+
+    const description = document.querySelector('#reportDescription').value
+
+    const category = document.querySelector('#reportCategory').value
+
+    const subcategory = document.querySelector('#reportSubcategory').value
+
+    const card = createReportCard({
+        title,
+        description,
+        category,
+        subcategory
+    })
+
+    DOM.reportsGrid.insertAdjacentHTML('afterbegin', card)
+
     filterReports()
 
-    reportForm.reset()
+    DOM.reportForm.reset()
+
     closeModal()
-});
+}
 
-// JS DOS SETORES DE CONSUMO
-(function () {
-    const hotspots = document.querySelectorAll('.mapa-hotspot');
+function initializeReports() {
+    if (!DOM.reportForm) return
 
-    document.addEventListener('click', (e) => {
-        if (!e.target.closest('.mapa-hotspot')) {
-            hotspots.forEach(h => h.classList.remove('mapa-hotspot--active'));
-        }
-    });
-
-    hotspots.forEach((hotspot) => {
-        hotspot.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const isActive = hotspot.classList.contains('mapa-hotspot--active');
-            hotspots.forEach(h => h.classList.remove('mapa-hotspot--active'));
-            if (!isActive) hotspot.classList.add('mapa-hotspot--active');
-        });
-    });
-
-    const mapaWrapper = document.getElementById('mapaWrapper');
-    const mapaInner = document.getElementById('mapaInner');
-    const mapaBtn = document.getElementById('mapaFullscreenBtn');
-    const mapaIcon = document.getElementById('mapaFullscreenIcon');
-
-    const MAPA_RATIO = 740 / 480;
-
-    function isFullscreen() {
-        return !!(document.fullscreenElement || document.webkitFullscreenElement);
-    }
-
-    function fitMapaInner() {
-        if (!mapaInner) return;
-        if (!isFullscreen()) {
-            mapaInner.style.width = '';
-            mapaInner.style.height = '';
-            return;
-        }
-        const vw = window.innerWidth;
-        const vh = window.innerHeight;
-        if (vw / vh > MAPA_RATIO) {
-            mapaInner.style.height = vh + 'px';
-            mapaInner.style.width = (vh * MAPA_RATIO) + 'px';
-        } else {
-            mapaInner.style.width = vw + 'px';
-            mapaInner.style.height = (vw / MAPA_RATIO) + 'px';
-        }
-    }
-
-    function updateIcon() {
-        mapaIcon.className = isFullscreen() ? 'ph ph-arrows-in' : 'ph ph-arrows-out';
-        mapaBtn.title = isFullscreen() ? 'Sair da tela cheia' : 'Expandir mapa';
-        fitMapaInner();
-    }
-
-    if (mapaBtn && mapaWrapper) {
-        mapaBtn.addEventListener('click', () => {
-            if (!isFullscreen()) {
-                (mapaWrapper.requestFullscreen || mapaWrapper.webkitRequestFullscreen).call(mapaWrapper);
-            } else {
-                (document.exitFullscreen || document.webkitExitFullscreen).call(document);
-            }
-        });
-
-        document.addEventListener('fullscreenchange', updateIcon);
-        document.addEventListener('webkitfullscreenchange', updateIcon);
-        window.addEventListener('resize', () => { if (isFullscreen()) fitMapaInner(); });
-    }
-})();
-// -----------------
+    DOM.reportForm.addEventListener('submit', handleReportSubmit)
+}
 
 
-
-// JS DOS RELATÓRIOS
-
-const filterButtons = document.querySelectorAll('[data-filter]')
-const subfilterButtons = document.querySelectorAll('[data-subfilter]')
+/* =========================================================
+   REPORT FILTERS
+========================================================= */
 
 let currentFilter = 'all'
 let currentSubfilter = 'all'
@@ -232,34 +295,253 @@ function filterReports() {
     const reportCards = document.querySelectorAll('.report-card')
 
     reportCards.forEach(card => {
+
         const category = card.dataset.category
+
         const subcategory = card.dataset.subcategory
 
-        const matchCategory =
-            currentFilter === 'all' || category === currentFilter
+        const matchesCategory =
+            currentFilter === 'all' ||
+            category === currentFilter
 
-        const matchSubcategory =
-            currentSubfilter === 'all' || subcategory === currentSubfilter
+        const matchesSubcategory =
+            currentSubfilter === 'all' ||
+            subcategory === currentSubfilter
 
-        card.style.display = (matchCategory && matchSubcategory) ? 'flex' : 'none'
+        card.classList.toggle(
+            'hidden',
+            !(matchesCategory && matchesSubcategory)
+        )
     })
 }
 
-filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        filterButtons.forEach(btn => btn.classList.remove('active'))
-        button.classList.add('active')
-        currentFilter = button.dataset.filter
-        filterReports()
-    })
-})
+function handleFilterClick(buttons, activeButton, filterType) {
 
-subfilterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        subfilterButtons.forEach(btn => btn.classList.remove('active'))
-        button.classList.add('active')
-        currentSubfilter = button.dataset.subfilter
-        filterReports()
+    removeActiveClass(buttons)
+
+    activeButton.classList.add('active')
+
+    if (filterType === 'category') {
+        currentFilter = activeButton.dataset.filter
+    }
+
+    if (filterType === 'subcategory') {
+        currentSubfilter = activeButton.dataset.subfilter
+    }
+
+    filterReports()
+}
+
+function initializeFilters() {
+
+    DOM.filterButtons.forEach(button => {
+
+        button.addEventListener('click', () => {
+
+            handleFilterClick(
+                DOM.filterButtons,
+                button,
+                'category'
+            )
+
+        })
+
     })
-})
-// -----------------
+
+    DOM.subfilterButtons.forEach(button => {
+
+        button.addEventListener('click', () => {
+
+            handleFilterClick(
+                DOM.subfilterButtons,
+                button,
+                'subcategory'
+            )
+
+        })
+
+    })
+
+}
+
+
+/* =========================================================
+   HOTSPOTS
+========================================================= */
+
+function closeHotspots() {
+    DOM.hotspots.forEach(hotspot => {
+        hotspot.classList.remove('mapa-hotspot--active')
+    })
+}
+
+function handleHotspotClick(event, hotspot) {
+    event.stopPropagation()
+
+    const isActive = hotspot.classList.contains('mapa-hotspot--active')
+
+    closeHotspots()
+
+    if (!isActive) {
+        hotspot.classList.add('mapa-hotspot--active')
+    }
+}
+
+function initializeHotspots() {
+
+    if (!DOM.hotspots.length) return
+
+    document.addEventListener('click', event => {
+
+        if (!event.target.closest('.mapa-hotspot')) {
+            closeHotspots()
+        }
+
+    })
+
+    DOM.hotspots.forEach(hotspot => {
+
+        hotspot.addEventListener('click', event => {
+            handleHotspotClick(event, hotspot)
+        })
+
+    })
+
+}
+
+
+/* =========================================================
+   FULLSCREEN MAP
+========================================================= */
+
+const MAP_RATIO = 740 / 480
+
+function isFullscreen() {
+    return !!(
+        document.fullscreenElement ||
+        document.webkitFullscreenElement
+    )
+}
+
+function fitMapToScreen() {
+
+    if (!DOM.mapaInner) return
+
+    if (!isFullscreen()) {
+
+        DOM.mapaInner.style.width = ''
+
+        DOM.mapaInner.style.height = ''
+
+        return
+    }
+
+    const viewportWidth = window.innerWidth
+
+    const viewportHeight = window.innerHeight
+
+    if (viewportWidth / viewportHeight > MAP_RATIO) {
+
+        DOM.mapaInner.style.height = `${viewportHeight}px`
+
+        DOM.mapaInner.style.width =
+            `${viewportHeight * MAP_RATIO}px`
+
+    } else {
+
+        DOM.mapaInner.style.width = `${viewportWidth}px`
+
+        DOM.mapaInner.style.height =
+            `${viewportWidth / MAP_RATIO}px`
+    }
+}
+
+function updateFullscreenUI() {
+
+    if (!DOM.fullscreenIcon || !DOM.fullscreenButton) return
+
+    DOM.fullscreenIcon.className = isFullscreen()
+        ? 'ph ph-arrows-in'
+        : 'ph ph-arrows-out'
+
+    DOM.fullscreenButton.title = isFullscreen()
+        ? 'Sair da tela cheia'
+        : 'Expandir mapa'
+
+    fitMapToScreen()
+}
+
+function toggleFullscreen() {
+
+    if (!DOM.mapaWrapper) return
+
+    if (!isFullscreen()) {
+
+        (
+            DOM.mapaWrapper.requestFullscreen ||
+            DOM.mapaWrapper.webkitRequestFullscreen
+        ).call(DOM.mapaWrapper)
+
+    } else {
+
+        (
+            document.exitFullscreen ||
+            document.webkitExitFullscreen
+        ).call(document)
+
+    }
+}
+
+function initializeFullscreenMap() {
+
+    if (!DOM.fullscreenButton) return
+
+    DOM.fullscreenButton.addEventListener(
+        'click',
+        toggleFullscreen
+    )
+
+    document.addEventListener(
+        'fullscreenchange',
+        updateFullscreenUI
+    )
+
+    document.addEventListener(
+        'webkitfullscreenchange',
+        updateFullscreenUI
+    )
+
+    window.addEventListener('resize', () => {
+
+        if (isFullscreen()) {
+            fitMapToScreen()
+        }
+
+    })
+}
+
+
+/* =========================================================
+   INIT
+========================================================= */
+
+function initializeApp() {
+
+    initializeClock()
+
+    initializeNavigation()
+
+    initializeUserMenu()
+
+    initializeModal()
+
+    initializeReports()
+
+    initializeFilters()
+
+    initializeHotspots()
+
+    initializeFullscreenMap()
+}
+
+initializeApp()
